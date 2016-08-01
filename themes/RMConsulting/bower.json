@@ -1,0 +1,15 @@
+{
+  "name": "rm",
+  "description": "WordPress theme developed for RM Consulting",
+  "main": "index.js",
+  "authors": [
+    "Eduardo Domingos"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.2",
+    "slick-carousel": "^1.6.0",
+    "tether": "^1.3.3"
+  }
+}

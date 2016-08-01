@@ -1,0 +1,10 @@
+{
+	"default": [
+		"copy",
+		"sass",
+		"postcss",
+		"concat:js",
+		"uglify",
+		"watch"
+	]
+}

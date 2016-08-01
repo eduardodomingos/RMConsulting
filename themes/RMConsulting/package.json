@@ -1,0 +1,30 @@
+{
+  "name": "rm",
+  "version": "1.0.0",
+  "description": "WordPress theme developed for RM Consulting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "*.git"
+  },
+  "author": "Eduardo Domingos",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "cssnano": "^3.7.3",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-replace": "^1.0.1",
+    "grunt-sass": "^1.2.0",
+    "grunt-string-replace": "^1.2.1",
+    "load-grunt-config": "^0.19.2",
+    "time-grunt": "^1.3.0"
+  }
+}
