@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    $SITE-NAV
+\*------------------------------------*/
+
+.site-nav {
+	@include list-unstyled();
+	display: none;
+}
+
+.menu-toggle {
+	@include square(48px);
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font-size: 25px;
+	background-color: transparent;
+	@include hover-focus-active() {
+		color: $blue1;
+	}
+}

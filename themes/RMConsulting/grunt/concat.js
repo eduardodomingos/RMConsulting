@@ -9,10 +9,10 @@ module.exports = {
 		],
 		dest: 'assets/build/js/main.js',
 	},
-	// fonts: {
-	// 	src: [
-	// 		'assets/src/fonts/icons/css/icons-rm.css'
-	// 	],
-	// 	dest: 'assets/src/sass/components/_fonts.scss'
-	// }
+	fonts: {
+		src: [
+			'assets/src/fonts/icons/css/icons-rm.css'
+		],
+		dest: 'assets/src/sass/components/_fonts.scss'
+	}
 };

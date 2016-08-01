@@ -1,0 +1,12 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+
+/// Shorthand mixin to give elements a square shape
+/// Serves as an alias for `size(width, width)`
+/// @param {Width} - Element width
+/// @require bootstrap's {size} mixin
+@mixin square($width) {
+	@include size($width, $width);
+}

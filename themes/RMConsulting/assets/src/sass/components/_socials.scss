@@ -1,0 +1,22 @@
+/*------------------------------------*\
+    $SOCIALS
+\*------------------------------------*/
+.socials {
+	@include list-unstyled();
+	li {
+		@include square(25px);
+		margin-top: 11px;
+		@include border-radius(50%);
+		background-color: $blue1;
+		@include hover-focus-active() {
+			background-color:darken( $blue1, 10%);
+		}
+
+		a {
+			color: #fff;
+			@include hover-focus-active() {
+				color: #fff;
+			}
+		}
+	}
+}
