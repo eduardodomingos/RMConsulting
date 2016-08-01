@@ -63,8 +63,22 @@
 
 
 
+/**
+ * Slick.
+ * http://kenwheeler.github.io/slick/
+ */
+@import "../../../bower_components/slick-carousel/slick/slick.scss";
+
+
+
+
+
 
 @import "helpers/mixins";
+@import "layout/page-head";
+@import "layout/container";
 @import "components/fonts";
 @import "components/site-nav";
 @import "components/socials";
+@import "components/headlines";
+@import "components/blockquotes";

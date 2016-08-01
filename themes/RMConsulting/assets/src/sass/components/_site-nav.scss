@@ -1,10 +1,27 @@
 /*------------------------------------*\
     $SITE-NAV
 \*------------------------------------*/
-
 .site-nav {
-	@include list-unstyled();
+	position: absolute;
+	top: 48px;
+	left: 0;
+	right: 0;
+	background-color: #fff;
 	display: none;
+
+	ul {
+		@include list-unstyled();
+		margin-bottom: 0;
+	}
+
+	a {
+		display: block;
+		line-height: 48px;
+		color: $blue1;
+		@include hover-focus-active() {
+			color: $blue1;
+		}
+	}
 }
 
 .menu-toggle {

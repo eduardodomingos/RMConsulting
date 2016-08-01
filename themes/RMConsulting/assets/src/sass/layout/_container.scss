@@ -1,0 +1,10 @@
+/*------------------------------------*\
+    $CONTAINER
+\*------------------------------------*/
+
+.container-until-lg {
+	@include media-breakpoint-down(lg) {
+		@include make-container();
+		@include make-container-max-widths();
+	}
+}

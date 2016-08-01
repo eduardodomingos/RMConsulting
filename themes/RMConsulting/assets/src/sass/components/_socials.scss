@@ -3,20 +3,37 @@
 \*------------------------------------*/
 .socials {
 	@include list-unstyled();
+	@include clearfix();
+	margin-top: 11px;
+	margin-bottom: 0;
 	li {
+		float: left;
 		@include square(25px);
-		margin-top: 11px;
+
 		@include border-radius(50%);
 		background-color: $blue1;
 		@include hover-focus-active() {
 			background-color:darken( $blue1, 10%);
 		}
 
+		+ li {
+			margin-left: 10px;
+		}
+
 		a {
 			color: #fff;
+			display: block;
+			line-height: 25px;
+			text-align: center;
+			font-size: 14px;
 			@include hover-focus-active() {
 				color: #fff;
 			}
 		}
 	}
+
+	.page-head & {
+		float: right;
+	}
+
 }
