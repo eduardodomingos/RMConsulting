@@ -14,7 +14,7 @@
 	color: transparent;
 	position: absolute;
 	top: 50%;
-	left: 15px;
+	left: 0;
 	z-index: 1;
 	@include square(48px);
 
@@ -31,7 +31,7 @@
 
 .slick-next {
 	left: auto;
-	right: 15px;
+	right: 0;
 	&:before {
 		content: '\e801';
 	}

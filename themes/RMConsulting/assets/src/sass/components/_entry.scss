@@ -9,10 +9,12 @@
 	}
 }
 
-	.entry__media {}
+	.entry__media {
+		margin-bottom: 16px;
+	}
 
 	.entry__text {
-		margin-top: 16px;
+
 		color: $blue1;
 
 		.view-more {

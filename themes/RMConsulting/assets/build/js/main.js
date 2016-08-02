@@ -8950,9 +8950,15 @@ var Popover = (function ($) {
 				startCollapsed: 'accordion'
 			});
 
+			// What we do slider
+			$('.what-we-do .slider').slick({
+				mobileFirst: true
+			});
+
+
 			dom.$window.load(function(){
 				// Latest News slider
-				$('.latest-news').slick({
+				$('.latest-news .slider').slick({
 					mobileFirst: true
 				}).on('afterChange',function(event){
 					fixVerticalArrows(event);
