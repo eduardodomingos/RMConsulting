@@ -1,0 +1,38 @@
+/*------------------------------------*\
+    $SLIDER
+\*------------------------------------*/
+
+// Arrows
+.slick-next,
+.slick-prev {
+	padding: 0;
+	margin: -24px 0 0;
+	font-size: 0;
+	line-height: 0;
+	border: 0;
+	background-color: transparent;
+	color: transparent;
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	z-index: 1;
+	@include square(48px);
+
+	&:before {
+		content: '\e802';
+		font-family: 'icons-rm';
+		display: block;
+		color: $blue1;
+		line-height: 48px;
+		@include square(100%);
+		font-size: 25px;
+	}
+}
+
+.slick-next {
+	left: auto;
+	right: 15px;
+	&:before {
+		content: '\e801';
+	}
+}

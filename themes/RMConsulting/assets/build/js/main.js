@@ -8261,26 +8261,28 @@ var Popover = (function ($) {
 		 * Homepage Code
 		 */
 		if(dom.$body.hasClass('home')) {
-			console.log('x');
 
 			// Headlines slider
-			
 			$('.headlines .slider-for').slick({
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				arrows: false,
 				fade: true,
-				asNavFor: '.slider-nav'
+				asNavFor: '.headlines .slider-nav'
 			});
+
 			$('.headlines .slider-nav').slick({
+				mobileFirst: true,
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				asNavFor: '.slider-for',
+				arrows: false,
+				asNavFor: '.headlines .slider-for'
 			});
 
-
-
-
+			// Latest News slider
+			$('.latest-news').slick({
+				mobileFirst: true
+			});
 		}
 	});
 

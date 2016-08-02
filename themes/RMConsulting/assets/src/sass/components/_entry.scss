@@ -1,0 +1,54 @@
+/*------------------------------------*\
+    $ENTRY
+\*------------------------------------*/
+
+.entry {
+	&.slick-slide {
+		padding-left: 48px;
+		padding-right: 48px;
+	}
+}
+
+	.entry__media {}
+
+	.entry__text {
+		margin-top: 16px;
+		color: $blue1;
+
+		.view-more {
+			color: inherit;
+			font-size: 15px;
+			@include hover-focus-active() {
+				color: darken($blue1, 10%);
+			}
+			&:before {
+				content: '\002F \002F';
+				margin-right: 8px;
+			}
+		}
+
+		hr {
+			border-top: 1px solid $blue1;
+			margin-top: 8px;
+			margin-bottom: 2px;
+		}
+
+	}
+
+
+		.entry__title {
+			text-transform: uppercase;
+			&,
+			a {
+				color: $blue1;
+				font-size: 20px;
+				letter-spacing: 1px;
+				@include hover-focus-active() {
+					color: darken($blue1, 10%);
+				}
+			}
+		}
+
+		.entry__date {
+			font-size: 13px;
+		}

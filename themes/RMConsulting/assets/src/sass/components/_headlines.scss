@@ -7,7 +7,7 @@
 	.slider-for {
 		background-color: $blue3;
 		text-align: center;
-		font-size: 14px;
+		font-size: 16px;
 		padding: 24px 0;
 		&, a {
 			color: #fff;
@@ -19,3 +19,8 @@
 	}
 
 }
+
+
+	.headlines__media {
+		position: relative;
+	}
