@@ -15,6 +15,7 @@
 
 	.blockquote-footer {
 		.headlines & {
+			font-family: $font-regular;
 			color: inherit;
 			font-size: 90%;
 			&:before {

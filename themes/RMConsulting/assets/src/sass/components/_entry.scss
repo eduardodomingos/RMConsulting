@@ -19,13 +19,14 @@
 
 		.view-more {
 			color: inherit;
-			font-size: 15px;
+			font-size: 14px;
+			font-family: $font-bold;
 			@include hover-focus-active() {
 				color: darken($blue1, 10%);
 			}
 			&:before {
 				content: '\002F \002F';
-				margin-right: 8px;
+				margin-right: 5px;
 			}
 		}
 

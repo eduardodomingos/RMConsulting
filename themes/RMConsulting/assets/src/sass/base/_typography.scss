@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+body {
+	-moz-osx-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+
+.section-title,
+.section-subtitle {
+	text-transform: uppercase;
+	font-family: $font-bold;
+}
+
+.section-title {
+	font-size: 18px;
+	line-height: 24px;
+	margin-bottom: 20px;
+	&:after {
+		content: ' \002F \002F';
+	}
+}
+.section-subtitle {
+	font-size: 15px;
+	line-height: 22px;
+	margin-bottom: 24px;
+}
