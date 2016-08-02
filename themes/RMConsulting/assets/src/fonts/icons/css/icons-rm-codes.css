@@ -4,5 +4,7 @@
 .icon-left-open-big:before { content: '\e802'; } /* '' */
 .icon-down-open-big:before { content: '\e803'; } /* '' */
 .icon-up-open-big:before { content: '\e804'; } /* '' */
+.icon-plus:before { content: '\e805'; } /* '' */
+.icon-minus:before { content: '\e806'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
 .icon-linkedin:before { content: '\f0e1'; } /* '' */

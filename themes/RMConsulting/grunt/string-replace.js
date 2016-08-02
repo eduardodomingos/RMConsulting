@@ -7,6 +7,10 @@ module.exports = {
 		}],
 		options: {
 			replacements: [{
+				pattern: /url\('Gotham/ig,
+				replacement: 'url(\'../fonts/gotham/Gotham'
+			},
+			{
 				pattern: /url\('..\/font\/icons-rm/ig,
 				replacement: 'url(\'../fonts/icons/font/icons-rm'
 			}]

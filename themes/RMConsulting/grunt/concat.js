@@ -12,7 +12,8 @@ module.exports = {
 	},
 	fonts: {
 		src: [
-			'assets/src/fonts/icons/css/icons-rm.css'
+			'assets/src/fonts/icons/css/icons-rm.css',
+			'assets/src/fonts/gotham/stylesheet.css'
 		],
 		dest: 'assets/src/sass/components/_fonts.scss'
 	}
