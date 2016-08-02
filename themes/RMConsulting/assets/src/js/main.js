@@ -32,12 +32,26 @@
 				asNavFor: '.headlines .slider-for'
 			});
 
-			// Latest News slider
-			$('.latest-news').slick({
-				mobileFirst: true
+			$('#about .tabs').responsiveTabs({
+				startCollapsed: 'accordion'
+			});
+
+			dom.$window.load(function(){
+				// Latest News slider
+				$('.latest-news').slick({
+					mobileFirst: true
+				}).on('afterChange',function(event){
+					fixVerticalArrows(event);
+				}).trigger('afterChange');
 			});
 		}
 	});
+
+	function fixVerticalArrows(event){
+		var h =  $(event.target).find('.slick-active img').height()/2;
+		console.log($(event.target).find('.slick-active img').height());
+		$(event.target).find('.slick-arrow').css('top',h+'px');
+	}
 
 
 }(jQuery));

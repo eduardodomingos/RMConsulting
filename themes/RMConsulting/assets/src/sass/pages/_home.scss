@@ -1,0 +1,42 @@
+/*------------------------------------*\
+    $HOME
+\*------------------------------------*/
+.home {
+
+	#about {
+		background-color: $blue4;
+
+		.tabs {
+			background-color: $blue5;
+			padding: 0 15px;
+		}
+
+		.r-tabs-accordion-title {
+			height: 40px;
+			margin-bottom: 24px;
+		}
+
+		.r-tabs-anchor {
+			text-transform: uppercase;
+			color: #fff;
+			text-decoration: none;
+			line-height: 40px;
+			@include hover-focus-active() {
+				color: #fff;
+			}
+		}
+
+		.r-tabs-state-active .r-tabs-anchor {
+			color: $blue1;
+			@include hover-focus-active() {
+				color: $blue1;
+			}
+		}
+
+		.r-tabs-panel {
+			padding: 0;
+		}
+
+	}
+
+}

@@ -73,6 +73,15 @@
 
 
 
+/**
+ * Responsive tabs
+ * http://jellekralt.github.io/Responsive-Tabs/
+ */
+@import "../../../bower_components/responsive-tabs/css/responsive-tabs";
+
+
+
+
 
 @import "helpers/mixins";
 @import "layout/page-head";
@@ -86,3 +95,4 @@
 @import "components/logo";
 @import "components/entry";
 @import "components/slider";
+@import "pages/home";
