@@ -220,7 +220,7 @@
 		</div><!-- row -->
 	</div><!-- container -->
 </section><!-- text-banner -->
-<section id="contact" class="contact band">
+<section id="contact" class="contact band p-b-0">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -259,20 +259,31 @@
 				</p>
 			</div><!-- col -->
 			<div class="col-xs-6">
+				<ul class="socials">
+					<li><a href="#"><i class="icon-facebook"></i><span class="sr-only">Facebook</span></a></li>
+					<li><a href="#"><i class="icon-linkedin"></i><span class="sr-only">Linkedin</span></a></li>
+				</ul><!-- socials -->
 				<p class="m-b-0">Coordenadas GPS:<br>
 				Latitude: 40.63971<br>
 				Longitude: -8.655896</p>
 			</div><!-- col -->
 		</div><!-- row -->
 	</div><!-- container -->
+
+	<div id="map-canvas"></div>
+
 </section><!-- contact -->
 
 
 
-<footer class="page-foot"></footer>
+<footer class="page-foot">
+	<img src="../assets/build/img/carapau_logo.svg" alt="O Carapau Criativo">
+	<p class="m-b-0">O Carapau Criativo &copy; 2016 | <a href="#">Privacy Policy</a></p>
+</footer>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA-sSwcZyd7Yc6za09svn6c4hVFxpCEFXI&amp;sensor=false&amp;ver=4.1.12"></script>
 <script src="../assets/build/js/main.js"></script>
 </body>
 </html>

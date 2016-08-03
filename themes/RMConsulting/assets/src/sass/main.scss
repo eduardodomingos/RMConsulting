@@ -85,6 +85,7 @@
 
 @import "helpers/mixins";
 @import "layout/page-head";
+@import "layout/page-foot";
 @import "layout/container";
 @import "layout/band";
 @import "base/typography";
@@ -98,4 +99,5 @@
 @import "components/slider";
 @import "components/courses-portlet";
 @import "components/forms";
+@import "components/map";
 @import "pages/home";
