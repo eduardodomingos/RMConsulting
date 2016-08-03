@@ -81,4 +81,26 @@
 			color: #fff;
 		}
 	}
+
+	#download {
+		text-align: center;
+		background-color: $blue9;
+		color: #fff;
+
+		.js-download {
+			border: 0;
+			padding: 0;
+			margin: 0;
+			@include square(70px);
+			line-height: 70px;
+			text-align: center;
+			@include border-radius(50%);
+			margin-bottom: 30px;
+			font-size: 35px;
+			background-color: $blue1;
+			@include hover-focus-active() {
+				background-color: darken($blue1, 10%);
+			}
+		}
+	}
 }
