@@ -103,4 +103,22 @@
 			}
 		}
 	}
+
+	#contact {
+		background-color: $blue9;
+		&, a {
+			color: #fff;
+			@include hover-focus-active() {
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+
+		.contacts {
+			font-size: 14px;
+		}
+
+	}
+
+
 }
