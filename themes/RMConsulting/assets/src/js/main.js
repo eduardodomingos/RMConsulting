@@ -63,6 +63,12 @@
 			// Google Map
 			googleMap();
 
+			// Scroll to top
+			$('a[href="#top"]').click(function() {
+				$("html, body").animate({ scrollTop: 0 }, 1000);
+				return false;
+			});
+
 
 			dom.$window.load(function(){
 				// Latest News slider
@@ -91,9 +97,17 @@
 			zoom: 17,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			styles: styles
-		}
+		};
+
+
 
 		var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+		var mapMarker = new google.maps.Marker({
+			position: mapOptions.center,
+			map: map,
+			icon: '/wp-content/themes/RMConsulting/assets/build/img/rm-map-marker.png'
+		});
 
 	}
 

@@ -22,4 +22,21 @@
 		margin-bottom: 10px;
 	}
 
+	.js-to-top {
+		position: absolute;
+		top: -70px;
+		right: 15px;
+		@include square(48px);
+		line-height: 48px;
+		text-align: center;
+		background: $blue9;
+		font-size: 20px;
+		color: #fff;
+		@include hover-focus-active {
+			text-decoration: none;
+			color: #fff;
+			background-color: darken($blue9, 10%);
+		}
+	}
+
 }
