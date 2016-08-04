@@ -21,6 +21,28 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<header class="page-head">
+	<div class="container">
+		<button class="menu-toggle"><i class="icon-menu"><span class="sr-only">Menu</span></i></button>
+
+		<nav class="site-nav container-until-lg">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=> false, 'menu_id' => 'primary-menu' ) ); ?>
+		</nav><!-- site-nav -->
+
+		<nav class="socials">
+			<?php wp_nav_menu( array( 'theme_location' => 'social', 'container'=> false, 'menu_id' => 'socials-menu-top', 'link_before' => '<span class="sr-only">', 'link_after' => '</span>' ) ); ?>
+		</nav><!-- socials -->
+		
+	</div><!-- container -->
+</header><!-- page-head -->
+
+
+
+
+
+
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rm' ); ?></a>
 
