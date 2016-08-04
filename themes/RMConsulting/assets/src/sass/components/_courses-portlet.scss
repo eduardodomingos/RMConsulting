@@ -5,7 +5,67 @@
 	background-color: $blue8;
 	color: #fff;
 	padding: 15px 10px;
+
+	.js-load-more {
+		padding: 0;
+		margin: 0;
+		border: 0;
+		background-color: transparent;
+		@include square(48px);
+		text-align: center;
+		line-height: 48px;
+		font-size: 25px;
+	}
+
+
 }
 
-	.courses-portlet__head {}
-	.courses-portlet__body {}
+	.courses-portlet__head {
+		font-family: $font-bold;
+	}
+	.courses-portlet__body {
+		padding: 20px 0;
+		ul {
+			@include list-unstyled();
+			margin-bottom: 0;
+		}
+
+		.course-name {
+			display: block;
+			padding: 12px 0;
+			border-bottom: 1px solid $blue1;
+			color: #fff;
+			@include hover-focus-active() {
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+
+		.panel-heading a {
+			position: relative;
+			&:before {
+				font-family: "icons-rm";
+				content: "\e806";
+				display: inline-block;
+				border: 2px solid #fff;
+				@include border-radius(50%);
+				@include square(24px);
+				text-align: center;
+				line-height: 20px;
+				margin-right: 12px;
+			}
+
+			&.collapsed:before {
+				content: "\e805";
+			}
+		}
+
+		.panel-collapse > div {
+			padding: 12px 0;
+			border-bottom: 1px solid $blue1;
+		}
+	}
+
+
+
+
