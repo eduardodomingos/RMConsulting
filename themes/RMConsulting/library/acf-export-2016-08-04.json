@@ -1,0 +1,158 @@
+[
+    {
+        "key": "group_57a35b4d79f25",
+        "title": "Home",
+        "fields": [
+            {
+                "key": "field_57a35b9d62676",
+                "label": "Headlines",
+                "name": "headlines",
+                "type": "repeater",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": "",
+                "max": "",
+                "layout": "block",
+                "button_label": "Add Row",
+                "sub_fields": [
+                    {
+                        "key": "field_57a35c4a62677",
+                        "label": "Image phone",
+                        "name": "image_phone",
+                        "type": "image_crop",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "crop_type": "hard",
+                        "target_size": "thumbnail",
+                        "width": "",
+                        "height": "",
+                        "preview_size": "thumbnail",
+                        "force_crop": "yes",
+                        "save_in_media_library": "yes",
+                        "retina_mode": "no",
+                        "save_format": "id",
+                        "library": "all"
+                    },
+                    {
+                        "key": "field_57a35d732ac75",
+                        "label": "Image tablet",
+                        "name": "image_tablet",
+                        "type": "image_crop",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "crop_type": "hard",
+                        "target_size": "thumbnail",
+                        "width": "",
+                        "height": "",
+                        "preview_size": "thumbnail",
+                        "force_crop": "yes",
+                        "save_in_media_library": "yes",
+                        "retina_mode": "no",
+                        "save_format": "id",
+                        "library": "all"
+                    },
+                    {
+                        "key": "field_57a35d872ac76",
+                        "label": "Image desktop",
+                        "name": "image_desktop",
+                        "type": "image_crop",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "crop_type": "hard",
+                        "target_size": "thumbnail",
+                        "width": "",
+                        "height": "",
+                        "preview_size": "thumbnail",
+                        "force_crop": "yes",
+                        "save_in_media_library": "yes",
+                        "retina_mode": "no",
+                        "save_format": "id",
+                        "library": "all"
+                    },
+                    {
+                        "key": "field_57a35dd6c03cc",
+                        "label": "Text",
+                        "name": "text",
+                        "type": "wysiwyg",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": "",
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 0
+                    },
+                    {
+                        "key": "field_57a37760cf227",
+                        "label": "url",
+                        "name": "url",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": "",
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "6"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt",
+            "featured_image",
+            "categories",
+            "tags"
+        ],
+        "active": 1,
+        "description": ""
+    }
+]
