@@ -4,10 +4,12 @@
 
 
 .socials {
-	@include list-unstyled();
-	@include clearfix();
-	margin-top: 11px;
-	margin-bottom: 0;
+	ul {
+		@include list-unstyled();
+		@include clearfix();
+		margin-top: 11px;
+		margin-bottom: 0;
+	}
 	li {
 		float: left;
 		@include square(25px);
@@ -22,7 +24,18 @@
 			margin-left: 10px;
 		}
 
+		&.icon a:before {
+			font-family: 'icons-rm';
+		}
+		&.facebook a:before {
+			content: '\f09a';
+		}
+		&.twitter a:before {
+			content: '\f0e1';
+		}
+
 		a {
+			position: relative;
 			color: #fff;
 			display: block;
 			line-height: 25px;
@@ -30,6 +43,7 @@
 			font-size: 14px;
 			@include hover-focus-active() {
 				color: #fff;
+				text-decoration: none;
 			}
 		}
 	}
