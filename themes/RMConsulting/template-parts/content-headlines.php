@@ -8,7 +8,6 @@
  */
 
 ?>
-
 <section id="headlines" class="headlines">
 	<div class="headlines__media">
 		<h1 class="logo">
@@ -20,18 +19,22 @@
 		<div class="slider-nav">
 			<?php
 			if( have_rows('headlines') ):
-				while ( have_rows('headlines') ) : the_row(); ?>
+				while ( have_rows('headlines') ) : the_row();
+					$image_phone = get_sub_field('image_phone');
+					$image_tablet = get_sub_field('image_tablet');
+					$image_desktop = get_sub_field('image_desktop');
+					?>
 					<div>
 						<picture>
 							<source media="(min-width: 1024px)"
-									srcset="<?php the_sub_field('image_desktop'); ?> 1024w"
+									srcset="<?php echo $image_desktop['url']; ?> 2000w"
 									sizes="100vw" />
 							<source media="(min-width: 480px)"
-									srcset="<?php the_sub_field('image_tablet'); ?> 480w"
+									srcset="<?php echo $image_tablet['url']; ?> 1024w"
 									sizes="100vw" />
-							<source srcset="<?php the_sub_field('image_phone'); ?> 320w"
+							<source srcset="<?php echo $image_phone['url']; ?> 480w"
 									sizes="100vw" />
-							<img src="<?php the_sub_field('image_phone'); ?>" alt="" class="img-fluid">
+							<img src="<?php echo $image_phone['url']; ?>" alt="<?php echo $image_desktop['alt']; ?>" class="img-fluid">
 						</picture>
 					</div>
 			<?php
@@ -51,7 +54,7 @@
 								<?php if(get_sub_field('url')): ?>
 								<a href="<?php the_sub_field('url'); ?>">
 								<?php endif; ?>
-									
+
 									<?php the_sub_field('text'); ?>
 
 								<?php if(get_sub_field('url')): ?>
