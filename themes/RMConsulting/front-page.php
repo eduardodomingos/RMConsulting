@@ -9,6 +9,16 @@
 
 get_header(); ?>
 
+	<?php
+	// Headlines
+	get_template_part('template-parts/content', 'headlines');
+
+	?>
+
+
+
+
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
