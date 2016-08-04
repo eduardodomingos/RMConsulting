@@ -51,11 +51,19 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
+
 								<?php if(get_sub_field('url')): ?>
 								<a href="<?php the_sub_field('url'); ?>">
 								<?php endif; ?>
 
-									<?php the_sub_field('text'); ?>
+									<?php if(get_sub_field('author')): ?>
+										<blockquote class="blockquote">
+											<p><?php the_sub_field('text'); ?></p>
+											<footer class="blockquote-footer"><?php the_sub_field('author'); ?></footer>
+										</blockquote>
+									<?php else: ?>
+										<p class="m-b-0"><?php the_sub_field('text'); ?></p>
+									<?php endif; ?>
 
 								<?php if(get_sub_field('url')): ?>
 								</a>
