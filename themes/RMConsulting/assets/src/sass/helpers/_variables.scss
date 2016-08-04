@@ -13,6 +13,10 @@ $blue5: #b7c4cf;
 $blue6: #5d7b94;
 $blue7: #9badbd;
 $blue8: #68849c;
+$blue9: #337d95;
+
+$body-color: $blue1;
+
 
 
 
@@ -26,3 +30,24 @@ $font-bold: 'Gotham', sans-serif;
 
 $font-family-sans-serif: $font-regular;
 $headings-font-family: $font-bold;
+
+
+
+
+
+/**
+ * Buttons.
+ */
+$btn-primary-bg: $blue1;
+$input-btn-border-width: 0;
+$btn-border-radius: 0;
+
+
+
+
+
+/**
+ * Forms.
+ */
+$input-color: $body-color;
+$input-border-radius: 0;

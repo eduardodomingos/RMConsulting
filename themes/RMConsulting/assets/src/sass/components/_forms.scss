@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+//Contact Form 7 Styles
+div.wpcf7-validation-errors {
+	@extend .alert;
+	@extend .alert-danger;
+}
+
+div.wpcf7-mail-sent-ok {
+	@extend .alert;
+	@extend .alert-success;
+}
+
+.contact-form {
+	button[type="submit"] {
+		width: 140px;
+	}
+}

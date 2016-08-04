@@ -1,0 +1,42 @@
+/*------------------------------------*\
+    $PAGE FOOT
+\*------------------------------------*/
+.page-foot {
+	text-align: center;
+	background-color: $blue1;
+	font-size: 13px;
+	padding: 10px 0;
+	margin-top: -74px;
+	z-index: 1;
+	position: relative;
+	&,
+	a {
+		color: #fff;
+		@include hover-focus-active() {
+			color: #fff;
+		}
+	}
+
+	img {
+		width: 36px;
+		margin-bottom: 10px;
+	}
+
+	.js-to-top {
+		position: absolute;
+		top: -70px;
+		right: 15px;
+		@include square(48px);
+		line-height: 48px;
+		text-align: center;
+		background: $blue9;
+		font-size: 20px;
+		color: #fff;
+		@include hover-focus-active {
+			text-decoration: none;
+			color: #fff;
+			background-color: darken($blue9, 10%);
+		}
+	}
+
+}

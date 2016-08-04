@@ -38,4 +38,21 @@
 		float: right;
 	}
 
+	.contacts & {
+		position: absolute;
+		top: -60px;
+		li {
+			background-color: #fff;
+			@include hover-focus-active() {
+				background-color:darken( #fff, 10%);
+			}
+			a {
+				color: $blue1!important;
+				@include hover-focus-active() {
+					color: $blue9!important;
+				}
+			}
+		}
+	}
+
 }
