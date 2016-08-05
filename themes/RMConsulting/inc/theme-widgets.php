@@ -19,6 +19,7 @@ function rm_widgets_init() {
 
 	register_widget( 'Rm_Latest_News' );
 	register_widget( 'Rm_About_Rm' );
+	register_widget( 'Rm_Why_Rm' );
 }
 
 add_action( 'widgets_init', 'rm_widgets_init' );
@@ -62,8 +63,8 @@ class Rm_Latest_News extends WP_Widget {
 class Rm_About_Rm extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'about', 'description' => __( 'Display company info', 'rm' ) );
-		parent::__construct( 'about', __('About RM','rm' ), $widget_ops );
+		$widget_ops = array( 'classname' => 'about-rm', 'description' => __( 'Display company info', 'rm' ) );
+		parent::__construct( 'about-rm', __('About RM','rm' ), $widget_ops );
 	}
 
 	function widget( $args, $instance ) {
@@ -71,12 +72,9 @@ class Rm_About_Rm extends WP_Widget {
 			$args['widget_id'] = $this->id;
 		}
 
-		//$latest_news = rm_get_latest_posts(get_field( 'latest_news_to_show', 'option' ));
-
 		echo $args['before_widget'];
 
-
-		$markup = '<section id="about" class="about band">';
+		$markup = '<section id="about-rm" class="about-rm band">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="tabs">';
 		echo $markup;
@@ -109,4 +107,74 @@ class Rm_About_Rm extends WP_Widget {
 
 		echo $args['after_widget'];
 	}
+}
+
+class Rm_Why_Rm extends WP_Widget {
+
+	function __construct() {
+		$widget_ops = array( 'classname' => 'why-rm', 'description' => __( 'Display the why RM info', 'rm' ) );
+		parent::__construct( 'why-rm', __('Why RM','rm' ), $widget_ops );
+	}
+
+	function widget( $args, $instance ) {
+		if ( ! isset( $args['widget_id'] ) ) {
+			$args['widget_id'] = $this->id;
+		}
+
+		$title = $instance['title'];
+		$text = empty( $instance['text'] ) ? '' : $instance['text'];
+
+		echo $args['before_widget'];
+
+		$markup = '<section id="why-rm" class="why-rm band">';
+		$markup.= '<div class="container">';
+		$markup.= '<div class="row">';
+		echo $markup;
+
+
+		$markup = '<div class="col-sm-12">';
+		$markup.= '<hgroup>';
+		$markup.= '<h2 class="section-title">'. $title .'</h2>';
+		$markup.= '<h3 class="section-subtitle">'. $text .'</h3>';
+		$markup.= '</hgroup>';
+		$markup.= '</div><!-- col -->';
+		echo $markup;
+
+
+		$markup = '</div><!-- row -->';
+		$markup.= '</div><!-- container -->';
+		$markup.= '</section><!-- about -->';
+		echo $markup;
+
+		echo $args['after_widget'];
+	}
+
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		$instance['title'] = !empty( $new_instance['title'] ) ? $new_instance['title'] : '';
+		$instance['text'] =  $new_instance['text'];
+
+		return $instance;
+	}
+
+	function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array( 'text' => '', 'title' => '') );
+
+		$markup = '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'title' ) .'">'. esc_html( 'Title:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'title' ) .'" name="'. $this->get_field_name( 'title' ) .'" type="text" value="'. esc_attr( $instance['title'] ) .'"  />';
+		$markup.= '</p>';
+
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'description' ) .'">'. esc_html( 'Text:', 'rm') .'</label>';
+		$markup.= '<textarea class="widefat" rows="10" cols="20" id="'. $this->get_field_id( 'text' ) .'" name="'. $this->get_field_name( 'text' ) .'">'. esc_textarea( $instance['text'] ) .'</textarea>';
+		$markup.= '</p>';
+
+		echo $markup;
+	}
+
+
+
+
 }

@@ -25,7 +25,7 @@ add_filter( 'excerpt_length', 'rm_custom_excerpt_length', 999 );
 function rm_excerpt_more( $more ) {
 	return sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
 		get_permalink( get_the_ID() ),
-		__( 'Read More', 'rm' )
+		__( 'Ver mais', 'rm' )
 	);
 }
 add_filter( 'excerpt_more', 'rm_excerpt_more' );

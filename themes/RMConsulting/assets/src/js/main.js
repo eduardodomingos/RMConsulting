@@ -32,12 +32,12 @@
 				asNavFor: '.headlines .slider-for'
 			});
 
-			$('#about .tabs').responsiveTabs({
+			$('#about-rm .tabs').responsiveTabs({
 				startCollapsed: 'accordion'
 			});
 
 			// What we do slider
-			$('.what-we-do .slider').slick({
+			$('.why-rm .slider').slick({
 				mobileFirst: true
 			});
 
