@@ -61,7 +61,7 @@
 
 
 			// Google Map
-			googleMap();
+			//googleMap();
 
 			// Scroll to top
 			$('a[href="#top"]').click(function() {
@@ -74,7 +74,7 @@
 				// Latest News slider
 				$('.latest-news .slider').slick({
 					mobileFirst: true
-				}).on('afterChange',function(event){
+				}).on('afterChange', function(event){
 					fixVerticalArrows(event);
 				}).trigger('afterChange');
 			});

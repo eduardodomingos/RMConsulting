@@ -5,29 +5,17 @@
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function rm_widgets_init() {
-	/*register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'rm' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'rm' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );*/
-
-
 
 	// Homepage sections
 	register_sidebar( array(
 		'name'          => __( 'Homepage sections', 'rm' ),
 		'id'            => 'rm-homepage-sections',
 		'description'	=> '',
-		'before_widget' => '<section id="%2$s" class="band section"><div class="container"><div class="row">',
-		'after_widget'  => '</div><!-- row --></div><!-- container --></section><!-- section -->',
+		'before_widget' => '',
+		'after_widget'  => '',
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
-
 
 	register_widget( 'Rm_Latest_News' );
 }
@@ -50,11 +38,21 @@ class Rm_Latest_News extends WP_Widget {
 
 		echo $args['before_widget'];
 
+		$markup = '<section id="latest-news" class="latest-news band">';
+		$markup.= '<div class="container">';
+		$markup.= '<div class="slider">';
+		echo $markup;
+
 		while( $latest_news->have_posts() ) : $latest_news->the_post();
-			get_template_part( 'template-parts/content', get_post_format() );
+			get_template_part( 'template-parts/content', 'entry' );
 		endwhile;
 
 		wp_reset_postdata();
+
+		$markup = '</div><!-- slider -->';
+		$markup.= '</div><!-- container -->';
+		$markup.= '</section><!-- latest-news -->';
+		echo $markup;
 
 		echo $args['after_widget'];
 	}
