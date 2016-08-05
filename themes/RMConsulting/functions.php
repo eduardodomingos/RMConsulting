@@ -20,6 +20,11 @@ function rm_content_width() {
 add_action( 'after_setup_theme', 'rm_content_width', 0 );
 
 /**
+ * Add ACF Options.
+ */
+require get_template_directory() . '/inc/acf.php';
+
+/**
  * Add theme support.
  */
 require get_template_directory() . '/inc/theme-support.php';
