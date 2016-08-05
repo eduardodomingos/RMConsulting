@@ -24,6 +24,9 @@
 
 		.r-tabs .r-tabs-panel {
 			padding-top: 0;
+			>*:last-child {
+				margin-bottom: 0;
+			}
 		}
 
 		.r-tabs-anchor {
