@@ -13,6 +13,7 @@ get_header(); ?>
 	// Headlines
 	get_template_part('template-parts/content', 'headlines');
 
+	dynamic_sidebar('rm-homepage-sections');
 	?>
 
 
