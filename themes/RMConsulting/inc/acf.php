@@ -1,7 +1,7 @@
 <?php
 if ( function_exists( 'acf_add_options_page' ) ) {
 
-	/*acf_add_options_page(array(
+	acf_add_options_page(array(
 		'page_title'		=> 'Theme Options',
 		'menu_title'		=> 'Theme Options',
 		'menu_slug'			=> 'theme-options',
@@ -9,7 +9,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 		'parent_slug'		=> '',
 		'position'			=> false,
 		'icon_url'			=> false,
-	));*/
+	));
 
 	acf_add_options_sub_page(array(
 		'page_title'		=> 'Homepage Settings',

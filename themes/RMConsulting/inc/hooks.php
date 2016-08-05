@@ -6,8 +6,8 @@
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
-function rm_custom_excerpt_length( $length ) {
-	return 20;
+function rm_custom_excerpt_length() {
+	return get_field( 'excerpt_length', 'option' );
 }
 add_filter( 'excerpt_length', 'rm_custom_excerpt_length', 999 );
 
