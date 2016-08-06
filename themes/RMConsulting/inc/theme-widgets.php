@@ -142,11 +142,37 @@ class Rm_Why_Rm extends WP_Widget {
 		$markup.= '</div><!-- col -->';
 		echo $markup;
 
+		$markup = '<div class="col-sm-12">';
+		$markup.= '<div class="slider">';
+
+		echo $markup;
+
+		$posts = get_field('why_rm');
+
+		if( $posts ){
+			global $post;
+
+			foreach( $posts as $post) {
+				setup_postdata($post);
+
+				get_template_part( 'template-parts/content', 'entry' );
+			}
+
+			wp_reset_postdata();
+		}
+
+		$markup = '</div><!-- slider -->';
+		$markup.= '</div><!-- col -->';
+
+		echo $markup;
 
 		$markup = '</div><!-- row -->';
 		$markup.= '</div><!-- container -->';
 		$markup.= '</section><!-- about -->';
 		echo $markup;
+
+
+
 
 		echo $args['after_widget'];
 	}

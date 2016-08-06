@@ -69,9 +69,15 @@
 			}
 		}
 
-		.entry__text {
+		.entry__body {
 			background-color: rgba(#fff, 0.8);
 			padding: 20px;
+
+			hr,
+			.posted-on {
+				display: none;
+			}
+
 		}
 	}
 
