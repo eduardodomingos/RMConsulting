@@ -351,7 +351,7 @@
                                 "name": "description",
                                 "type": "textarea",
                                 "instructions": "",
-                                "required": 0,
+                                "required": 1,
                                 "conditional_logic": 0,
                                 "wrapper": {
                                     "width": "",
@@ -418,6 +418,29 @@
                 "append": "",
                 "min": 1,
                 "max": 10,
+                "step": 1,
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "key": "field_57a5ccb09dcc5",
+                "label": "Courses to show",
+                "name": "courses_to_show",
+                "type": "number",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 4,
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": 2,
+                "max": 6,
                 "step": 1,
                 "readonly": 0,
                 "disabled": 0
