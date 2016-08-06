@@ -21,6 +21,7 @@ function rm_widgets_init() {
 	register_widget( 'Rm_About_Rm' );
 	register_widget( 'Rm_Why_Rm' );
 	register_widget( 'Rm_Courses' );
+	register_widget( 'Rm_Download' );
 }
 
 add_action( 'widgets_init', 'rm_widgets_init' );
@@ -352,3 +353,73 @@ class Rm_Courses extends WP_Widget {
 	}
 
 }
+
+class Rm_Download extends WP_Widget {
+
+	function __construct() {
+		$widget_ops = array( 'classname' => 'download', 'description' => __( 'Display the download section', 'rm' ) );
+		parent::__construct( 'download', __('Download','rm' ), $widget_ops );
+	}
+
+	function widget( $args, $instance ) {
+		if ( ! isset( $args['widget_id'] ) ) {
+			$args['widget_id'] = $this->id;
+		}
+
+		$text = empty( $instance['text'] ) ? '' : $instance['text'];
+		$download_url = empty( $instance['download_url'] ) ? '' : $instance['download_url'];
+
+		echo $args['before_widget'];
+
+		$markup = '<section id="download" class="download band">';
+		$markup.= '<div class="container">';
+		$markup.= '<div class="row">';
+		$markup.= '<div class="col-sm-12">';
+
+
+
+		$markup .= do_shortcode('[easy_media_download url="'. $download_url .'" text="<span>Download</span>" color="rm"]');
+		
+		$markup.= '<p class="m-b-0">'. $text .'</p>';
+
+		$markup.= '</div><!-- col -->';
+		$markup.= '</div><!-- row -->';
+		$markup.= '</div><!-- container -->';
+		$markup.= '</section><!-- download -->';
+
+
+
+		echo $markup;
+
+		echo $args['after_widget'];
+	}
+
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		$instance['text'] =  $new_instance['text'];
+		$instance['download_url'] =  $new_instance['download_url'];
+
+		return $instance;
+	}
+
+	function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array( 'text' => '') );
+
+		$markup = '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'description' ) .'">'. esc_html( 'Text:', 'rm') .'</label>';
+		$markup.= '<textarea class="widefat" rows="10" cols="20" id="'. $this->get_field_id( 'text' ) .'" name="'. $this->get_field_name( 'text' ) .'">'. esc_textarea( $instance['text'] ) .'</textarea>';
+		$markup.= '</p>';
+
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'download_url' ) .'">'. esc_html( 'Download URL:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'download_url' ) .'" name="'. $this->get_field_name( 'download_url' ) .'" type="text" value="'. esc_attr( $instance['download_url'] ) .'"  />';
+		$markup.= '</p>';
+
+		echo $markup;
+	}
+}
+
+
+
+

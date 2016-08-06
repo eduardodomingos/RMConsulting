@@ -96,19 +96,32 @@
 		background-color: $blue9;
 		color: #fff;
 
-		.js-download {
+		.emd_dl_rm {
+			background: $blue1;
+			border: 0;
+			box-shadow: none;
+			text-shadow: none;
 			border: 0;
 			padding: 0;
-			margin: 0;
+			margin: 0 0 30px;
 			@include square(70px);
 			line-height: 70px;
 			text-align: center;
 			@include border-radius(50%);
-			margin-bottom: 30px;
-			font-size: 35px;
-			background-color: $blue1;
 			@include hover-focus-active() {
-				background-color: darken($blue1, 10%);
+				text-decoration: none;
+				background: darken($blue1, 10%);
+			}
+
+			&:before {
+				font-family: "icons-rm";
+				content: '\f02e';
+				font-size: 25px;
+				line-height: 70px;
+			}
+
+			span {
+				@include sr-only();
 			}
 		}
 	}
