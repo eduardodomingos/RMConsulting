@@ -247,31 +247,29 @@ class Rm_Courses extends WP_Widget {
 		$markup.= '<div class="courses-portlet__head">';
 		$markup.= '<p class="m-b-0">// Algumas das formações tradicionais são:</p>';
 		$markup.= '</div><!-- courses-portlet__head -->';
+		echo $markup;
 
 		// check for rows (parent repeater)
 		if( have_rows('courses') ) {
 			$nb_courses = count( get_field('courses') );
 			$courses_to_show = get_field( 'courses_to_show', 'option' );
-
 			if($nb_courses > $courses_to_show) {
 				$courses_counter = 0;
 				$show_load_more = true;
 			}
 
-			$markup.= '<div class="courses-portlet__body">';
-			$markup.= '<ul>';
+			$markup = '<div class="courses-portlet__body">';
+			$markup.= '<ul class="courses-list" data-step="'. $courses_to_show .'">';
+			echo $markup;
 
 			while ( have_rows('courses') ) {
 				the_row();
 
 				if(isset($courses_counter)) {
 					$courses_counter++;
-					if($courses_counter > $courses_to_show) {
-						break;
-					}
 				}
 
-				$markup.= '<span class="course-name"><strong>'. get_sub_field('name'). '</strong>';
+				$markup = '<li '. (($courses_counter > $courses_to_show) ? 'class="hidden"' : '') .'><span class="course-name"><strong>'. get_sub_field('name'). '</strong>';
 				if(get_sub_field('description')) {
 					$markup.= ' - '. get_sub_field('description');
 				}
@@ -295,11 +293,14 @@ class Rm_Courses extends WP_Widget {
 
 						$counter++;
 					}
-					$markup.= '<ul>';
+					$markup.= '</ul>';
 				}
+				$markup.= '</li>';
+
+				echo $markup;
 			}
 
-			$markup.='</ul>';
+			$markup = '</ul>';
 			$markup.='</div><!-- courses-portlet__body -->';
 
 			if(isset($show_load_more) && $show_load_more) {
@@ -307,13 +308,12 @@ class Rm_Courses extends WP_Widget {
 				$markup.='<button class="js-load-more"><span class="sr-only">Carregar mais</span><i class="icon-down-open-big"></i></button>';
 				$markup.='</div><!-- courses-portlet__foot -->';
 			}
+			echo $markup;
 		}
-		
-		$markup.= '</div><!--courses-portlet -->';
-		$markup.= '</div><!-- col -->';
-		echo $markup;
 
-		$markup = '</div><!-- row -->';
+		$markup = '</div><!--courses-portlet -->';
+		$markup.= '</div><!-- col -->';
+		$markup.= '</div><!-- row -->';
 		$markup.= '</div><!-- container -->';
 		$markup.= '</section><!-- courses -->';
 		echo $markup;

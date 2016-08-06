@@ -41,24 +41,19 @@
 				mobileFirst: true
 			});
 
-			// Accordion load more
-			// $('.courses .js-load-more').click(function() {
-            //
-			// 	var html = '<div class="panel panel-default">';
-			// 	html+= '<div class="panel-heading" role="tab" id="headingOne">';
-			// 	html+= '<h4 class="panel-title">';
-			// 	html+= '<a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">SMED - Optimização dos Tempos de Preparação</a>';
-			// 	html+= '</h4>';
-			// 	html+= '</div>';
-			// 	html+= '<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">';
-			// 	html+= 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute.';
-			// 	html+= '</div>';
-			// 	html+= '</div>';
-			//
-			// 	$('.courses #accordion').append(html);
-            //
-			// });
+			// Load more courses
+			$('.courses .js-load-more').click(function(e) {
+				e.preventDefault();
+				var step = $(".courses-list").data('step');
+				$(".courses-list>li:not('.hidden'):last")
+					.nextAll('.hidden:lt('+ step +')')
+					.removeClass('hidden');
 
+				// If all visible hide button
+				if($('.courses-list > li.hidden').length === 0) {
+					$(this).hide();
+				}
+			});
 
 			// Google Map
 			//googleMap();
