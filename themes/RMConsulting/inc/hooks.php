@@ -23,7 +23,7 @@ add_filter( 'excerpt_length', 'rm_custom_excerpt_length', 999 );
  * @return string (Maybe) modified "read more" excerpt string.
  */
 function rm_excerpt_more( $more ) {
-	return sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
+	return sprintf( '... <a class="read-more" href="%1$s">%2$s</a>',
 		get_permalink( get_the_ID() ),
 		__( 'Ver mais', 'rm' )
 	);

@@ -20,6 +20,7 @@ function rm_widgets_init() {
 	register_widget( 'Rm_Latest_News' );
 	register_widget( 'Rm_About_Rm' );
 	register_widget( 'Rm_Why_Rm' );
+	register_widget( 'Rm_Courses' );
 }
 
 add_action( 'widgets_init', 'rm_widgets_init' );
@@ -123,7 +124,7 @@ class Rm_Why_Rm extends WP_Widget {
 
 		$title = $instance['title'];
 		$subtitle = empty( $instance['subtitle'] ) ? '' : $instance['subtitle'];
-		$text = empty( $instance['text'] ) ? '' : $instance['text'];
+		//$text = empty( $instance['text'] ) ? '' : $instance['text'];
 
 		echo $args['before_widget'];
 
@@ -138,7 +139,7 @@ class Rm_Why_Rm extends WP_Widget {
 		$markup.= '<h2 class="section-title">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
 		$markup.= '</hgroup>';
-		$markup.= '<p>'. $text . '</p>';
+		//$markup.= '<p>'. $text . '</p>';
 		$markup.= '</div><!-- col -->';
 		echo $markup;
 
@@ -181,6 +182,107 @@ class Rm_Why_Rm extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = !empty( $new_instance['title'] ) ? $new_instance['title'] : '';
 		$instance['subtitle'] = !empty( $new_instance['subtitle'] ) ? $new_instance['subtitle'] : '';
+		//$instance['text'] =  $new_instance['text'];
+
+		return $instance;
+	}
+
+	function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array( 'text' => '', 'title' => '', 'subtitle' => '') );
+
+		$markup = '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'title' ) .'">'. esc_html( 'Title:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'title' ) .'" name="'. $this->get_field_name( 'title' ) .'" type="text" value="'. esc_attr( $instance['title'] ) .'"  />';
+		$markup.= '</p>';
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'subtitle' ) .'">'. esc_html( 'Subtitle:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'subtitle' ) .'" name="'. $this->get_field_name( 'subtitle' ) .'" type="text" value="'. esc_attr( $instance['subtitle'] ) .'"  />';
+		$markup.= '</p>';
+
+		/*$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'description' ) .'">'. esc_html( 'Text:', 'rm') .'</label>';
+		$markup.= '<textarea class="widefat" rows="10" cols="20" id="'. $this->get_field_id( 'text' ) .'" name="'. $this->get_field_name( 'text' ) .'">'. esc_textarea( $instance['text'] ) .'</textarea>';
+		$markup.= '</p>';*/
+
+		echo $markup;
+	}
+}
+
+class Rm_Courses extends WP_Widget {
+
+	function __construct() {
+		$widget_ops = array( 'classname' => 'courses', 'description' => __( 'Display the list of available courses', 'rm' ) );
+		parent::__construct( 'courses', __('Courses','rm' ), $widget_ops );
+	}
+
+	function widget( $args, $instance ) {
+		if ( ! isset( $args['widget_id'] ) ) {
+			$args['widget_id'] = $this->id;
+		}
+
+		$title = $instance['title'];
+		$subtitle = empty( $instance['subtitle'] ) ? '' : $instance['subtitle'];
+		$text = empty( $instance['text'] ) ? '' : $instance['text'];
+
+		echo $args['before_widget'];
+
+		$markup = '<section id="courses" class="courses band">';
+		$markup.= '<div class="container">';
+		$markup.= '<div class="row">';
+		echo $markup;
+
+		$markup = '<div class="col-sm-12">';
+		$markup.= '<hgroup>';
+		$markup.= '<h2 class="section-title">'. $title .'</h2>';
+		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
+		$markup.= '</hgroup>';
+		$markup.= '<p>'. $text . '</p>';
+		$markup.= '</div><!-- col -->';
+		echo $markup;
+
+
+		$markup = '<div class="col-sm-12">';
+		$markup.= '<div class="courses-portlet">';
+		$markup.= '<div class="courses-portlet__head">';
+		$markup.= '<p class="m-b-0">// Algumas das formações tradicionais são:</p>';
+		$markup.= '</div><!-- courses-portlet__head -->';
+
+
+		if( have_rows('courses') ) {
+			$markup.= '<div class="courses-portlet__body">';
+			$markup.= '<ul>';
+
+			while ( have_rows('courses') ) {
+				the_row();
+				$markup.= '<span class="course-name"><strong>'. get_sub_field('name'). '</strong>';
+				if(get_sub_field('description')) {
+					$markup.= ' - '. get_sub_field('description');
+				}
+				$markup.= '</span>';
+			}
+
+			$markup.='</ul>';
+			$markup.='</div><!-- courses-portlet__body -->';
+		}
+
+
+		$markup.= '</div><!--courses-portlet -->';
+		$markup.= '</div><!-- col -->';
+		echo $markup;
+
+		$markup = '</div><!-- row -->';
+		$markup.= '</div><!-- container -->';
+		$markup.= '</section><!-- courses -->';
+		echo $markup;
+
+		echo $args['after_widget'];
+	}
+
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		$instance['title'] = !empty( $new_instance['title'] ) ? $new_instance['title'] : '';
+		$instance['subtitle'] = !empty( $new_instance['subtitle'] ) ? $new_instance['subtitle'] : '';
 		$instance['text'] =  $new_instance['text'];
 
 		return $instance;
@@ -206,8 +308,5 @@ class Rm_Why_Rm extends WP_Widget {
 
 		echo $markup;
 	}
-
-
-
 
 }
