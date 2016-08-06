@@ -248,25 +248,67 @@ class Rm_Courses extends WP_Widget {
 		$markup.= '<p class="m-b-0">// Algumas das formações tradicionais são:</p>';
 		$markup.= '</div><!-- courses-portlet__head -->';
 
-
+		// check for rows (parent repeater)
 		if( have_rows('courses') ) {
+			$nb_courses = count( get_field('courses') );
+			$courses_to_show = get_field( 'courses_to_show', 'option' );
+
+			if($nb_courses > $courses_to_show) {
+				$courses_counter = 0;
+				$show_load_more = true;
+			}
+
 			$markup.= '<div class="courses-portlet__body">';
 			$markup.= '<ul>';
 
 			while ( have_rows('courses') ) {
 				the_row();
+
+				if(isset($courses_counter)) {
+					$courses_counter++;
+					if($courses_counter > $courses_to_show) {
+						break;
+					}
+				}
+
 				$markup.= '<span class="course-name"><strong>'. get_sub_field('name'). '</strong>';
 				if(get_sub_field('description')) {
 					$markup.= ' - '. get_sub_field('description');
 				}
 				$markup.= '</span>';
+
+				// check for rows (sub repeater)
+				if( have_rows('modules') ) {
+					$markup.= '<ul id="accordion" role="tablist" aria-multiselectable="true">';
+					$counter = 1;
+					while ( have_rows('modules') ) {
+						the_row();
+
+						$markup.= '<li class="panel panel-default">';
+						$markup.= '<div class="panel-heading" role="tab" id="heading'. $counter .'">';
+						$markup.= '<a class="collapsed course-name" data-toggle="collapse" data-parent="#accordion" href="#collapse'. $counter .'" aria-expanded="true" aria-controls="collapse'. $counter .'">'. get_sub_field('name') .'</a>';
+						$markup.= '</div>';
+						$markup.= '<div id="collapse'. $counter .'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading'. $counter .'">';
+						$markup.= '<div>'. get_sub_field('description') .'</div>';
+						$markup.= '</div><!-- collapse -->';
+						$markup.= '</li><!-- panel -->';
+
+						$counter++;
+					}
+					$markup.= '<ul>';
+				}
 			}
 
 			$markup.='</ul>';
 			$markup.='</div><!-- courses-portlet__body -->';
+
+			if(isset($show_load_more) && $show_load_more) {
+				$markup.='<div class="courses-portlet__foot text-xs-center">';
+				$markup.='<button class="js-load-more"><span class="sr-only">Carregar mais</span><i class="icon-down-open-big"></i></button>';
+				$markup.='</div><!-- courses-portlet__foot -->';
+			}
 		}
-
-
+		
 		$markup.= '</div><!--courses-portlet -->';
 		$markup.= '</div><!-- col -->';
 		echo $markup;
