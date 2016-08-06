@@ -1,20 +1,29 @@
 <?php
 /**
- * Returns the URL of the post 16:9 featured image
+ * Returns the most recent posts
  *
  * @package Eduardo Domingos
  * @since 0.1.0
  * @author Eduardo Domingos
- * @param $post_id
+ * @param $nb_posts
+ * @param $excluded_cats
  *
- * @return photo url
+ * @return object
  *
  */
-function rm_get_latest_posts($nb_posts) {
+function rm_get_latest_posts($nb_posts, $excluded_cats = array()) {
+
+	$excluded_cats_ids = array();
+
+	foreach ($excluded_cats as $cat) {
+		array_push($excluded_cats_ids, get_cat_ID($cat));
+	}
+
 	$args = [
 		'post_type' => 'post',
 		'post_status' => 'publish',
 		'posts_per_page' => $nb_posts,
+		'category__not_in' => $excluded_cats_ids,
 		'orderby' => 'date',
 	];
 
