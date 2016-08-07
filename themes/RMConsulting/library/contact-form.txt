@@ -1,0 +1,21 @@
+<div class="form-group">
+<label class="sr-only" for="inputName">Nome</label>
+[text* your-name id:inputName class:form-control placeholder "Nome"]
+</div>
+
+<div class="form-group">
+<label class="sr-only" for="inputPhone">Telemóvel</label>
+[tel your-tel id:inputPhone class:form-control placeholder "Telemóvel"]
+</div>
+
+<div class="form-group">
+<label class="sr-only" for="inputEmail">Email</label>
+[email* your-email id:inputEmail class:form-control placeholder "Email"]
+</div>
+
+<div class="form-group">
+<label class="sr-only" for="inputMessage">Mensagem</label>
+[textarea* your-message id:inputMessage class:form-control placeholder "Mensagem"]
+</div>
+
+<p>[submit "Enviar"]</p>
