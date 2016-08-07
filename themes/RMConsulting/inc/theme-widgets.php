@@ -549,6 +549,10 @@ class Rm_Contacts extends WP_Widget {
 		$markup.= '</div><!-- container -->';
 		$markup.= '<div id="map-canvas"></div>';
 		$markup.= '</section><!-- contact -->';
+		
+		$markup.= '<script>';
+		$markup.= 'var coords = {"lat":'. $latitude .',"long": '. $longitude .'}';
+		$markup.= '</script>';
 
 		echo $markup;
 
