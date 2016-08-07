@@ -31,7 +31,7 @@
 		</nav><!-- site-nav -->
 
 		<nav class="socials">
-			<?php wp_nav_menu( array( 'theme_location' => 'social', 'container'=> false, 'menu_id' => 'socials-menu-top', 'link_before' => '<span class="sr-only">', 'link_after' => '</span>' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'social_header', 'container'=> false, 'menu_id' => 'socials-menu-header', 'link_before' => '<span class="sr-only">', 'link_after' => '</span>' ) ); ?>
 		</nav><!-- socials -->
 
 	</div><!-- container -->
