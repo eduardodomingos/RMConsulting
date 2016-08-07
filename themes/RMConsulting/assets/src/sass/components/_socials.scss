@@ -7,7 +7,6 @@
 	ul {
 		@include list-unstyled();
 		@include clearfix();
-		margin-top: 11px;
 		margin-bottom: 0;
 	}
 	li {
@@ -49,6 +48,9 @@
 	}
 
 	.page-head & {
+		ul {
+			margin-top: 11px;
+		}
 		float: right;
 	}
 
@@ -68,5 +70,4 @@
 			}
 		}
 	}
-
 }
