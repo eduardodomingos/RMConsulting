@@ -22,6 +22,8 @@ function rm_widgets_init() {
 	register_widget( 'Rm_Why_Rm' );
 	register_widget( 'Rm_Courses' );
 	register_widget( 'Rm_Download' );
+	register_widget( 'Rm_Text_Banner' );
+	register_widget( 'Rm_Contacts' );
 }
 
 add_action( 'widgets_init', 'rm_widgets_init' );
@@ -379,7 +381,7 @@ class Rm_Download extends WP_Widget {
 
 
 		$markup .= do_shortcode('[easy_media_download url="'. $download_url .'" text="<span>Download</span>" color="rm"]');
-		
+
 		$markup.= '<p class="m-b-0">'. $text .'</p>';
 
 		$markup.= '</div><!-- col -->';
@@ -420,6 +422,175 @@ class Rm_Download extends WP_Widget {
 	}
 }
 
+class Rm_Text_Banner extends WP_Widget {
+
+	function __construct() {
+		$widget_ops = array( 'classname' => 'text-banner', 'description' => __( 'Display the banner text', 'rm' ) );
+		parent::__construct( 'text-banner', __('Text banner','rm' ), $widget_ops );
+	}
+
+	function widget( $args, $instance ) {
+		if ( ! isset( $args['widget_id'] ) ) {
+			$args['widget_id'] = $this->id;
+		}
+
+		$title = $instance['title'];
+		$subtitle = empty( $instance['subtitle'] ) ? '' : $instance['subtitle'];
+		$text = empty( $instance['text'] ) ? '' : $instance['text'];
+
+		echo $args['before_widget'];
+
+		$markup = '<section class="text-banner band">';
+		$markup.= '<div class="container">';
+		$markup.= '<div class="row">';
+		$markup.= '<div class="col-sm-12">';
+		$markup.= '<hgroup>';
+		$markup.= '<h2 class="section-title m-b-0">'. $title .'</h2>';
+		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
+		$markup.= '</hgroup>';
+		$markup.= '<p class="m-b-0">'. $text . '</p>';
+		$markup.= '</div><!-- col -->';
+
+		$markup.= '</div><!-- row -->';
+		$markup.= '</div><!-- container -->';
+		$markup.= '</section><!-- text-banner -->';
+		echo $markup;
+
+		echo $args['after_widget'];
+	}
+
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		$instance['title'] = !empty( $new_instance['title'] ) ? $new_instance['title'] : '';
+		$instance['subtitle'] = !empty( $new_instance['subtitle'] ) ? $new_instance['subtitle'] : '';
+		$instance['text'] = !empty( $new_instance['text'] ) ? $new_instance['text'] : '';
+
+		return $instance;
+	}
+
+	function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array( 'text' => '', 'title' => '', 'subtitle' => '') );
+
+		$markup = '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'title' ) .'">'. esc_html( 'Title:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'title' ) .'" name="'. $this->get_field_name( 'title' ) .'" type="text" value="'. esc_attr( $instance['title'] ) .'"  />';
+		$markup.= '</p>';
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'subtitle' ) .'">'. esc_html( 'Subtitle:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'subtitle' ) .'" name="'. $this->get_field_name( 'subtitle' ) .'" type="text" value="'. esc_attr( $instance['subtitle'] ) .'"  />';
+		$markup.= '</p>';
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'description' ) .'">'. esc_html( 'Text:', 'rm') .'</label>';
+		$markup.= '<textarea class="widefat" rows="10" cols="20" id="'. $this->get_field_id( 'text' ) .'" name="'. $this->get_field_name( 'text' ) .'">'. esc_textarea( $instance['text'] ) .'</textarea>';
+		$markup.= '</p>';
+
+		echo $markup;
+	}
+}
+
+class Rm_Contacts extends WP_Widget {
+
+	function __construct() {
+		$widget_ops = array( 'classname' => 'contact', 'description' => __( 'Display the contacts', 'rm' ) );
+		parent::__construct( 'contact', __('Contact','rm' ), $widget_ops );
+	}
+
+	function widget( $args, $instance ) {
+		if ( ! isset( $args['widget_id'] ) ) {
+			$args['widget_id'] = $this->id;
+		}
 
 
+		$title = empty( $instance['title'] ) ? '' : $instance['title'];
+		$subtitle = empty( $instance['subtitle'] ) ? '' : $instance['subtitle'];
+		$address = empty( $instance['address'] ) ? '' : $instance['address'];
+		$phone = empty( $instance['phone'] ) ? '' : $instance['phone'];
+		$email = empty( $instance['email'] ) ? '' : $instance['email'];
+		$latitude = empty( $instance['latitude'] ) ? '' : $instance['latitude'];
+		$longitude= empty( $instance['longitude'] ) ? '' : $instance['longitude'];
 
+		echo $args['before_widget'];
+
+		$markup = '<section id="contact" class="contact band p-b-0">';
+		$markup.= '<div class="container">';
+		$markup.= '<div class="row">';
+		$markup.= '<div class="col-sm-12">';
+		$markup.= '<hgroup>';
+		$markup.= '<h2 class="section-title">'. $title .'</h2>';
+		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
+		$markup.= '</hgroup>';
+
+		$markup .= do_shortcode('[contact-form-7 id="86" title="Contact form 1"]');
+
+		$markup.= '</div><!-- col -->';
+		$markup.= '</div><!-- row -->';
+		$markup.= '<div class="row contacts">';
+		$markup.= '<div class="col-xs-6">';
+		$markup.= '</div><!-- col -->';
+		$markup.= '<div class="col-xs-6">';
+		$markup.= '</div><!-- col -->';
+		$markup.= '</div><!-- row -->';
+		$markup.= '</div><!-- container -->';
+		$markup.= '<div id="map-canvas"></div>';
+		$markup.= '</section><!-- contact -->';
+
+
+		echo $markup;
+
+		echo $args['after_widget'];
+	}
+
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		$instance['title'] = !empty( $new_instance['title'] ) ? $new_instance['title'] : '';
+		$instance['subtitle'] = !empty( $new_instance['subtitle'] ) ? $new_instance['subtitle'] : '';
+		$instance['address'] = !empty( $new_instance['address'] ) ? $new_instance['address'] : '';
+		$instance['phone'] = !empty( $new_instance['phone'] ) ? $new_instance['phone'] : '';
+		$instance['email'] = !empty( $new_instance['email'] ) ? $new_instance['email'] : '';
+		$instance['latitude'] = !empty( $new_instance['latitude'] ) ? $new_instance['latitude'] : '';
+		$instance['longitude'] = !empty( $new_instance['longitude'] ) ? $new_instance['longitude'] : '';
+
+		return $instance;
+	}
+
+	function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array( 'text' => '', 'title' => '', 'subtitle' => '') );
+
+		$markup = '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'title' ) .'">'. esc_html( 'Title:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'title' ) .'" name="'. $this->get_field_name( 'title' ) .'" type="text" value="'. esc_attr( $instance['title'] ) .'"  />';
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'subtitle' ) .'">'. esc_html( 'Subtitle:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'subtitle' ) .'" name="'. $this->get_field_name( 'subtitle' ) .'" type="text" value="'. esc_attr( $instance['subtitle'] ) .'"  />';
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'address' ) .'">'. esc_html( 'Address:', 'rm') .'</label>';
+		$markup.= '<textarea class="widefat" rows="10" cols="20" id="'. $this->get_field_id( 'address' ) .'" name="'. $this->get_field_name( 'address' ) .'">'. esc_textarea( $instance['address'] ) .'</textarea>';
+		$markup.= '</p>';
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'phone' ) .'">'. esc_html( 'Phone:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'phone' ) .'" name="'. $this->get_field_name( 'phone' ) .'" type="text" value="'. esc_attr( $instance['phone'] ) .'"  />';
+		$markup.= '</p>';
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'email' ) .'">'. esc_html( 'Email:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'email' ) .'" name="'. $this->get_field_name( 'email' ) .'" type="text" value="'. esc_attr( $instance['email'] ) .'"  />';
+		$markup.= '</p>';
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'latitude' ) .'">'. esc_html( 'Latitude:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'latitude' ) .'" name="'. $this->get_field_name( 'latitude' ) .'" type="text" value="'. esc_attr( $instance['latitude'] ) .'"  />';
+		$markup.= '</p>';
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'longitude' ) .'">'. esc_html( 'Longitude:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'longitude' ) .'" name="'. $this->get_field_name( 'longitude' ) .'" type="text" value="'. esc_attr( $instance['longitude'] ) .'"  />';
+		$markup.= '</p>';
+
+		echo $markup;
+	}
+}
