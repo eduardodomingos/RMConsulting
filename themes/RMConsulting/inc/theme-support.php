@@ -38,7 +38,8 @@ if ( ! function_exists( 'rm_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary Menu', 'rm' ),
-			'social' => esc_html__( 'Social Menu', 'rm' ),
+			'social_header' => esc_html__( 'Social Menu Header', 'rm' ),
+			'social_footer' => esc_html__( 'Social Menu Footer', 'rm' ),
 		) );
 
 		/*
