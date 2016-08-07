@@ -522,20 +522,33 @@ class Rm_Contacts extends WP_Widget {
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
 		$markup.= '</hgroup>';
 
-		$markup .= do_shortcode('[contact-form-7 id="86" title="Contact form 1"]');
+		$markup .= do_shortcode('[contact-form-7 id="86" title="Contact form 1" html_class="contact-form"]');
 
 		$markup.= '</div><!-- col -->';
 		$markup.= '</div><!-- row -->';
 		$markup.= '<div class="row contacts">';
 		$markup.= '<div class="col-xs-6">';
+		$markup.= '<p class="m-b-0">'. $address .'<br>';
+		$markup.= 'tel. <a href="tel:+351'. str_replace(' ', '', $phone) .'">'. $phone .'</a><br>';
+		$markup.= '<a href="mailto:'. $email .'">'. $email .'</a>';
+		$markup.= '</p>';
 		$markup.= '</div><!-- col -->';
 		$markup.= '<div class="col-xs-6">';
+
+		$markup.= '<nav class="socials">';
+		echo $markup;
+
+		wp_nav_menu( array( 'theme_location' => 'social_footer', 'container'=> false, 'menu_id' => 'socials-menu-footer', 'link_before' => '<span class="sr-only">', 'link_after' => '</span>' ) );
+
+		$markup = '</nav><!-- socials -->';
+		$markup.= '<p class="m-b-0">Coordenadas GPS:<br>';
+		$markup.= 'Latitude: '. $latitude .'<br>';
+		$markup.= 'Longitude: '. $longitude .'</p>';
 		$markup.= '</div><!-- col -->';
 		$markup.= '</div><!-- row -->';
 		$markup.= '</div><!-- container -->';
 		$markup.= '<div id="map-canvas"></div>';
 		$markup.= '</section><!-- contact -->';
-
 
 		echo $markup;
 
