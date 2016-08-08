@@ -1,0 +1,50 @@
+/*------------------------------------*\
+    $POST
+\*------------------------------------*/
+
+.post {
+	.posted-on {
+		font-family: $font-bold;
+		font-size: 14px;
+	}
+}
+
+.post__category {
+	font-family: $font-bold;
+	text-transform: uppercase;
+	font-size: 18px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid $blue1;
+	letter-spacing: 0.5px;
+}
+
+.post__header{}
+
+.post__meta {
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid $blue1;
+}
+
+.post__media {
+	margin-bottom: 20px;
+}
+
+.post__title {
+	font-size: 20px;
+	color: $blue1;
+	text-transform: uppercase;
+	letter-spacing: -0.5px;
+}
+
+.post__content {
+	*>:last-child {
+		margin-bottom: 0;
+	}
+	margin-bottom: 20px;
+}
+
+.post__footer {
+	margin-bottom: 20px;
+}

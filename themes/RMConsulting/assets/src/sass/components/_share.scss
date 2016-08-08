@@ -1,0 +1,42 @@
+/*------------------------------------*\
+    $SHARE
+\*------------------------------------*/
+.share-this {
+	margin-bottom: 20px;
+}
+
+.share-this__label {
+	font-family: $font-bold;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+.share-this__link {
+	@include square(30px);
+
+	text-align: center;
+	display: inline-block;
+	@include border-radius(50%);
+	color: #fff;
+	background-color: $blue6;
+
+	span {
+		display: block;
+		&:before {
+			line-height: 30px;
+			margin: 0;
+		}
+	}
+
+
+	@include hover-focus-active(){
+		color: #fff;
+		text-decoration: none;
+		background-color: $blue1;
+	}
+
+	&+.share-this__link {
+		margin-left: 10px;
+	}
+
+}

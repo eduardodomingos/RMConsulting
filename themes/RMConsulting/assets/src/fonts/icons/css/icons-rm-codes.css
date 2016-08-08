@@ -7,5 +7,7 @@
 .icon-plus:before { content: '\e805'; } /* '' */
 .icon-minus:before { content: '\e806'; } /* '' */
 .icon-download:before { content: '\f02e'; } /* '' */
+.icon-gplus:before { content: '\f05a'; } /* '' */
+.icon-twitter:before { content: '\f099'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
 .icon-linkedin:before { content: '\f0e1'; } /* '' */

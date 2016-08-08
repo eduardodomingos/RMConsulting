@@ -12,7 +12,7 @@ if ( ! function_exists( 'rm_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function rm_posted_on() {
-	$time_string = '<time class="entry__date" datetime="%1$s">%2$s</time>';
+	$time_string = '<time datetime="%1$s">%2$s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
@@ -36,28 +36,6 @@ if ( ! function_exists( 'rm_entry_footer' ) ) :
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function rm_entry_footer() {
-	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'rm' ) );
-		if ( $categories_list && rm_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'rm' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
-
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'rm' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'rm' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
-	}
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'rm' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-		echo '</span>';
-	}
-
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
@@ -112,3 +90,29 @@ function rm_category_transient_flusher() {
 }
 add_action( 'edit_category', 'rm_category_transient_flusher' );
 add_action( 'save_post',     'rm_category_transient_flusher' );
+
+
+
+/**
+ * Builds the share buttons acrross different articles / pages
+ * @param string $label     What appears before the button
+ * @param string $title     Normally the page title
+ * @param string $description   Normally the page description
+ * @param string $classes       CSS classes to add on the wrapper
+ * @return string (html)
+ */
+function rm_share_buttons( $label = 'Share', $url = '', $title = '', $description = '', $classes = '' ) {
+	$url = urlencode(html_entity_decode( $url, ENT_COMPAT, 'UTF-8') );
+	$title = rawurlencode(html_entity_decode( $title, ENT_COMPAT, 'UTF-8') );
+	$description = urlencode(html_entity_decode( $description, ENT_COMPAT, 'UTF-8') );
+	$html = '<div class="share-this ' . $classes . '">';
+	if ( $label != '' ) {
+		$html .= '<p class="share-this__label">' . $label . ': </p>';
+	}
+	$html .= '<a title="'. esc_html__( 'Share on', 'dw' ) .' Facebook" href="https://www.facebook.com/sharer/sharer.php?t=' . $title . '&u=' . $url . '" class="share-this__link link-share-facebook"><span class="icon-facebook"></span></a>';
+	$html .= '<a title="'. esc_html__( 'Share on', 'dw' ) .' LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&url=' . $url . '&title=' . $title . '" class="share-this__link link-share-in"><span class="icon-linkedin"></span></a>';
+	$html .= '<a title="'. esc_html__( 'Share on', 'dw' ) .' Twitter" href="https://twitter.com/intent/tweet?original_referer=' . $url . '&text=' . $title . ': ' . $url . '&via=rmconsulting" class="share-this__link link-share-twitter"><span class="icon-twitter"></span></a>';
+	$html .= '<a title="'. esc_html__( 'Share on', 'dw' ) .' Google+" href="https://plus.google.com/share?url=' . $url . '" class="share-this__link link-share-gplus"><span class="icon-gplus"></span></a>';
+	$html .= '</div>';
+	return $html;
+}

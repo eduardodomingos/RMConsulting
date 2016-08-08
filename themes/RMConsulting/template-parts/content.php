@@ -9,39 +9,48 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+<?php
+$main_image = get_field('main_image');
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
+	<header class="post__header">
+		<?php if ( 'post' === get_post_type() ) : ?>
+		<p class="post__category"><?php echo esc_html__( 'Notícias', 'rm' ); ?></p>
+		<?php
+		endif; ?>
+
+		<? if( $main_image ) : ?>
+			<img src="<?php echo $main_image['sizes']['medium'] ?>" alt="<?php echo $main_image['alt']; ?>" class="post__media img-fluid">
+		<?php endif; ?>
+
+
 		<?php
 		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1 class="post__title">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="post__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
+		<div class="post__meta">
 			<?php rm_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="post__content">
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'rm' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rm' ),
-				'after'  => '</div>',
-			) );
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="post__footer">
 		<?php rm_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

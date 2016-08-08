@@ -9,27 +9,37 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
+<div class="band band--primary">
+	<main role="main">
+		<div class="container">
 		<?php
 		while ( have_posts() ) : the_post();
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
-			the_post_navigation();
+			echo rm_share_buttons( esc_html__( 'Partilhe esta notícia', 'rm' ), get_permalink(), get_the_title() );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			$latest_news = rm_get_latest_posts(get_field( 'latest_news_to_show', 'option' ), array('Why us')); // exclude posts under the why us category
 
+		?>
+		</div><!-- container -->
+		<section class="latest-news band">
+			<div class="slider">
+				<?php
+				while( $latest_news->have_posts() ) : $latest_news->the_post();
+					get_template_part( 'template-parts/content', 'entry' );
+				endwhile;
+
+				wp_reset_postdata();
+				?>
+			</div><!-- slider -->
+		</section><!-- latest-news -->
+		<?php
 		endwhile; // End of the loop.
 		?>
+	</main>
+</div><!-- band -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

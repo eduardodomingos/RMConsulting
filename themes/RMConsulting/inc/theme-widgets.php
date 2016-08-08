@@ -522,7 +522,7 @@ class Rm_Contacts extends WP_Widget {
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
 		$markup.= '</hgroup>';
 
-		$markup .= do_shortcode('[contact-form-7 id="86" title="Contact form 1" html_class="contact-form"]');
+		$markup .= do_shortcode('[contact-form-7 id="108" title="Contact form 1" html_class="contact-form"]');
 
 		$markup.= '</div><!-- col -->';
 		$markup.= '</div><!-- row -->';
@@ -549,7 +549,7 @@ class Rm_Contacts extends WP_Widget {
 		$markup.= '</div><!-- container -->';
 		$markup.= '<div id="map-canvas"></div>';
 		$markup.= '</section><!-- contact -->';
-		
+
 		$markup.= '<script>';
 		$markup.= 'var coords = {"lat":'. $latitude .',"long": '. $longitude .'}';
 		$markup.= '</script>';

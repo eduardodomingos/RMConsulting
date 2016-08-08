@@ -10,6 +10,17 @@
 		};
 
 
+
+
+		/*
+		 * All pages Code
+		 */
+		// Scroll to top
+		$('a[href="#top"]').click(function() {
+			$("html, body").animate({ scrollTop: 0 }, 1000);
+			return false;
+		});
+
 		/*
 		 * Homepage Code
 		 */
@@ -58,12 +69,20 @@
 			// Google Map
 			googleMap();
 
-			// Scroll to top
-			$('a[href="#top"]').click(function() {
-				$("html, body").animate({ scrollTop: 0 }, 1000);
-				return false;
+			dom.$window.load(function(){
+				// Latest News slider
+				$('.latest-news .slider').slick({
+					mobileFirst: true
+				}).on('afterChange', function(event){
+					fixVerticalArrows(event);
+				}).trigger('afterChange');
 			});
+		}
 
+		/*
+		 * Single page Code
+		 */
+		if(dom.$body.hasClass('single')) {
 
 			dom.$window.load(function(){
 				// Latest News slider

@@ -23,7 +23,9 @@
 
 	<div class="entry__body">
 		<?php the_title( '<h2 class="entry__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+
 		<p class="entry__text"><?php echo get_the_excerpt(); ?></p>
+		<a href="<?php the_permalink(); ?>" class="read-more"><?php echo __('Ver mais', 'rm'); ?></a>
 		<hr>
 		<?php rm_posted_on(); ?>
 	</div><!-- entry__text -->
