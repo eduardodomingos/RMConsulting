@@ -51,3 +51,23 @@ $btn-border-radius: 0;
  */
 $input-color: $body-color;
 $input-border-radius: 0;
+
+
+
+
+
+/**
+ * Layout.
+ */
+$grid-breakpoints: (
+	// Extra small screen / phone
+	xs: 0,
+	// Small screen / phone
+	sm: 320px,
+	// Medium screen / tablet
+	md: 480px,
+	// Large screen / desktop
+	lg: 1024px,
+	// Extra large screen / wide desktop
+	xl: 1024px
+);

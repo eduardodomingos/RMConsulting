@@ -46,7 +46,7 @@ class Rm_Latest_News extends WP_Widget {
 
 		$markup = '<section id="latest-news" class="latest-news band">';
 		$markup.= '<div class="container">';
-		$markup.= '<div class="container-shrink">';
+		$markup.= '<div class="slider-wrapper">';
 
 		$markup.= '<div class="slider arrows-out">';
 		echo $markup;
@@ -58,7 +58,7 @@ class Rm_Latest_News extends WP_Widget {
 		wp_reset_postdata();
 
 		$markup = '</div><!-- slider -->';
-		$markup.= '</div><!-- container-shrink -->';
+		$markup.= '</div><!-- slider-wrapper -->';
 		$markup.= '</div><!-- container -->';
 		$markup.= '</section><!-- latest-news -->';
 		echo $markup;
@@ -150,7 +150,8 @@ class Rm_Why_Rm extends WP_Widget {
 		echo $markup;
 
 		$markup = '<div class="col-sm-12">';
-		$markup.= '<div class="slider">';
+		$markup.= '<div class="slider-wrapper">';
+		$markup.= '<div class="slider arrows-out">';
 
 		echo $markup;
 
@@ -169,6 +170,7 @@ class Rm_Why_Rm extends WP_Widget {
 		}
 
 		$markup = '</div><!-- slider -->';
+		$markup = '</div><!-- slider-wrapper -->';
 		$markup.= '</div><!-- col -->';
 
 		echo $markup;

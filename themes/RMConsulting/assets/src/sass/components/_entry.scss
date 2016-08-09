@@ -3,13 +3,7 @@
 \*------------------------------------*/
 
 .entry {
-	//&.slick-slide {
-	//	padding-left: 48px;
-	//	padding-right: 48px;
-	//}
-
-	width: 220px;
-
+	margin: 0 15px;
 	.posted-on {
 		font-size: 13px;
 	}
@@ -45,7 +39,7 @@
 
 		.category-why-us & {
 			background-color: rgba(#fff, 0.8);
-			padding: 20px;
+			padding: 30px;
 
 			hr,
 			.posted-on {
@@ -81,7 +75,8 @@
 			&,
 			a {
 				color: $blue1;
-				font-size: 20px;
+				font-size: 18px;
+				line-height: 22px;
 				letter-spacing: 1px;
 				@include hover-focus-active() {
 					color: darken($blue1, 10%);

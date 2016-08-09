@@ -11,6 +11,7 @@
 	max-height: 0;
 	transition: max-height 0.2s;
 	overflow: hidden;
+	z-index: 2;
 
 	ul {
 		@include list-unstyled();

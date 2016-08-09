@@ -2,6 +2,38 @@
     $HOME
 \*------------------------------------*/
 .home {
+	#latest-news {
+		.slider-wrapper {
+			margin: 0 auto;
+		}
+
+		.slider-wrapper,
+		.entry {
+			width: 220px;
+		}
+
+		@include media-breakpoint-up(md) {
+			.slick-list {
+				margin: 0 15px;
+			}
+
+			.slider-wrapper {
+				width: 400px;
+
+			}
+			.entry {
+				width: 170px;
+			}
+
+			.slick-prev {
+				left: -33px;
+			}
+			.slick-next {
+				right: -33px;
+			}
+		}
+	}
+
 
 	#about-rm {
 		background-color: $blue4;
@@ -49,10 +81,29 @@
 	}
 
 	#why-rm {
-		background: url('../img/black-and-white-cup-hand-mug.jpg');
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(#000, 0.6);
+		}
+
+
+		background: url('../img/why-us-sm.jpg');
 		background-size: cover;
 		background-repeat: no-repeat;
+		background-position: center;
 		color: #fff;
+		@include media-breakpoint-up(md) {
+			background-image: url('../img/why-us-md.jpg');
+		}
+		@include media-breakpoint-up(lg) {
+			background-image: url('../img/why-us-lg.jpg');
+		}
 
 		.slick-prev {
 			display: none!important;
@@ -62,21 +113,10 @@
 			color: #fff;
 		}
 
+
+		.slider-wrapper,
 		.entry {
-			&.slick-slide {
-				padding-left: 0;
-				padding-right: 48px;
-			}
-		}
-
-		.entry__body {
-			background-color: rgba(#fff, 0.8);
-			padding: 20px;
-
-			hr,
-			.posted-on {
-				display: none;
-			}
+			width: 235px;
 		}
 	}
 
@@ -136,7 +176,7 @@
 		}
 		.contacts {
 			font-size: 14px;
-			padding-top: 20px;
+			padding-top: 10px;
 			padding-bottom: 20px;
 		}
 	}

@@ -8976,12 +8976,15 @@ var Popover = (function ($) {
 			});
 
 			$('#about-rm .tabs').responsiveTabs({
-				startCollapsed: 'accordion'
+				startCollapsed: 'accordion',
+				animation: 'slide',
+				duration: 200
 			});
 
 			// What we do slider
 			$('.why-rm .slider').slick({
-				mobileFirst: true
+				mobileFirst: true,
+				variableWidth: true,
 			});
 
 			// Load more courses
