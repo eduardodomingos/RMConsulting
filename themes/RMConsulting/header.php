@@ -23,11 +23,13 @@
 
 <header class="page-head" role="banner">
 	<div class="container clearfix">
-		<button id="js-menu-toggle" class="menu-toggle"><i class="icon-menu"><span class="sr-only">Menu</span></i></button>
+		<button id="js-menu-toggle" class="menu-toggle"><span class="sr-only">Menu</span></button>
 
 		<div class="pull-lg-right">
-			<nav class="site-nav container-until-lg">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=> false, 'menu_id' => 'primary-menu' ) ); ?>
+			<nav class="site-nav">
+				<div class="container-until-lg">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=> false, 'menu_id' => 'primary-menu' ) ); ?>
+				</div><!-- container-until-lg -->
 			</nav><!-- site-nav -->
 
 			<nav class="socials">

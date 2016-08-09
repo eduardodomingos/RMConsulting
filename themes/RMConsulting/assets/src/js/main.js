@@ -9,8 +9,8 @@
 			$body:	 					$('body'),
 			$menuToggle:				$('#js-menu-toggle'),
 			//$menuToggleIcon:				$('#js-menu-toggle i'),
-			//$siteNav:					$('.site-nav'),
-			//$siteNavList:				$('.site-nav .menu'),
+			$siteNav:					$('.site-nav'),
+			$siteNavMenu:				$('.site-nav .menu'),
 		};
 
 
@@ -26,18 +26,19 @@
 		});
 
 		// Toggle mobile menu
-		// var menuHeight = dom.$siteNavList.outerHeight();
-		// dom.$menuToggle.click(function(e){
-		// 	if(dom.$siteNav.hasClass('active')) {
-		// 		dom.$siteNav.css('max-height', 0);
-		// 		dom.$menuToggleIcon.removeClass('icon-cancel').addClass('icon-menu');
-		// 		dom.$siteNav.removeClass('active');
-		// 	} else {
-		// 		dom.$siteNav.css('max-height', menuHeight);
-		// 		dom.$menuToggleIcon.removeClass('icon-menu').addClass('icon-cancel');
-		// 		dom.$siteNav.addClass('active');
-		// 	}
-		// });
+		dom.$menuToggle.click(function(e){
+			var menuHeight = dom.$siteNavMenu.outerHeight();
+			if(dom.$body.hasClass('nav-open')){
+				// nav is open, close it
+				dom.$siteNav.removeAttr('style');
+				dom.$body.removeClass('nav-open');
+
+			} else {
+				// nav is closed, open it
+				dom.$siteNav.css('max-height', menuHeight);
+				dom.$body.addClass('nav-open');
+			}
+		});
 
 
 		// On window resize:

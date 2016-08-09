@@ -6,7 +6,7 @@
 	top: 48px;
 	left: 0;
 	right: 0;
-	background-color: #fff;
+	background-color: $blue4;
 	z-index: 1;
 	max-height: 0;
 	transition: max-height 0.2s;
@@ -14,6 +14,7 @@
 	z-index: 2;
 
 	@include media-breakpoint-up(lg) {
+		background-color: transparent;
 		max-height: none;
 		position: static;
 		float: left;
@@ -62,6 +63,19 @@
 	font-size: 25px;
 	background-color: transparent;
 	float: left;
+
+	&:before {
+		font-family: 'icons-rm';
+		content: '\e800';
+
+	}
+
+	.nav-open & {
+		&:before {
+			content: '\e807';
+		}
+	}
+
 	@include hover-focus-active() {
 		color: $blue1;
 	}
