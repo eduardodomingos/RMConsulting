@@ -11,7 +11,6 @@
 	.posted-on {
 		font-size: 13px;
 	}
-
 }
 
 	.entry__media {
@@ -42,13 +41,38 @@
 			margin-bottom: 2px;
 		}
 
+		.category-why-us & {
+			background-color: rgba(#fff, 0.8);
+			padding: 20px;
+
+			hr,
+			.posted-on {
+				display: none;
+			}
+
+			.read-more {
+				width: 100%;
+				@extend .btn;
+				@extend .btn-primary;
+				&:before {
+					content: none;
+				}
+
+			}
+
+
+		}
+
 	}
 
 	.entry__text {
 		line-height: 21px;
 		margin-bottom: 0;
+		.category-why-us & {
+			margin-bottom: 15px;
+		}
 
-		.single & {
+		.single .entry:not(.category-why-us) & {
 			display: none;
 		}
 
