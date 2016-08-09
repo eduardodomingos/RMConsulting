@@ -8920,7 +8920,11 @@ var Popover = (function ($) {
 		 */
 		var dom = {
 			$window: 					$(window),
-			$body:	 					$('body')
+			$body:	 					$('body'),
+			$menuToggle:				$('#js-menu-toggle'),
+			$menuToggleIcon:				$('#js-menu-toggle i'),
+			$siteNav:					$('.site-nav'),
+			$siteNavList:				$('.site-nav .menu'),
 		};
 
 
@@ -8933,6 +8937,20 @@ var Popover = (function ($) {
 		$('a[href="#top"]').click(function() {
 			$("html, body").animate({ scrollTop: 0 }, 1000);
 			return false;
+		});
+
+		// Toggle mobile menu
+		var menuHeight = dom.$siteNavList.outerHeight();
+		dom.$menuToggle.click(function(e){
+			if(dom.$siteNav.hasClass('active')) {
+				dom.$siteNav.css('max-height', 0);
+				dom.$menuToggleIcon.removeClass('icon-cancel').addClass('icon-menu');
+				dom.$siteNav.removeClass('active');
+			} else {
+				dom.$siteNav.css('max-height', menuHeight);
+				dom.$menuToggleIcon.removeClass('icon-menu').addClass('icon-cancel');
+				dom.$siteNav.addClass('active');
+			}
 		});
 
 		/*
@@ -8986,7 +9004,18 @@ var Popover = (function ($) {
 			dom.$window.load(function(){
 				// Latest News slider
 				$('.latest-news .slider').slick({
-					mobileFirst: true
+					mobileFirst: true,
+					variableWidth: true,
+					slidesToShow: 1,
+					responsive: [
+						{
+							breakpoint: 479,
+							settings: {
+								slidesToShow: 2,
+								slidesToScroll: 1
+							}
+						}
+					]
 				}).on('afterChange', function(event){
 					fixVerticalArrows(event);
 				}).trigger('afterChange');

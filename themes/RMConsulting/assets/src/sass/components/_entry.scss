@@ -3,10 +3,12 @@
 \*------------------------------------*/
 
 .entry {
-	&.slick-slide {
-		padding-left: 48px;
-		padding-right: 48px;
-	}
+	//&.slick-slide {
+	//	padding-left: 48px;
+	//	padding-right: 48px;
+	//}
+
+	width: 220px;
 
 	.posted-on {
 		font-size: 13px;
@@ -57,12 +59,8 @@
 				&:before {
 					content: none;
 				}
-
 			}
-
-
 		}
-
 	}
 
 	.entry__text {
@@ -77,7 +75,6 @@
 		}
 
 	}
-
 
 		.entry__title {
 			text-transform: uppercase;

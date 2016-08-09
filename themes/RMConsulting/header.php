@@ -23,7 +23,7 @@
 
 <header class="page-head" role="banner">
 	<div class="container">
-		<button class="menu-toggle"><i class="icon-menu"><span class="sr-only">Menu</span></i></button>
+		<button id="js-menu-toggle" class="menu-toggle"><i class="icon-menu"><span class="sr-only">Menu</span></i></button>
 
 		<nav class="site-nav container-until-lg">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=> false, 'menu_id' => 'primary-menu' ) ); ?>

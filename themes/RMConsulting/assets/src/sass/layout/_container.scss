@@ -8,3 +8,8 @@
 		@include make-container-max-widths();
 	}
 }
+
+.container-shrink {
+	width: 220px;
+	margin: 0 auto;
+}

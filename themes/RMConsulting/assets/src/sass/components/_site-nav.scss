@@ -7,7 +7,10 @@
 	left: 0;
 	right: 0;
 	background-color: #fff;
-	display: none;
+	z-index: 1;
+	max-height: 0;
+	transition: max-height 0.2s;
+	overflow: hidden;
 
 	ul {
 		@include list-unstyled();

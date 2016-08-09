@@ -27,3 +27,24 @@ body {
 	line-height: 22px;
 	margin-bottom: 24px;
 }
+
+
+
+
+/**
+ * A generic style to get rid of outlines.
+ */
+a:focus,
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover
+{
+	outline:0px !important;
+	-webkit-appearance:none;
+}

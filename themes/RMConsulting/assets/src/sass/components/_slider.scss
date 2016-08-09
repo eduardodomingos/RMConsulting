@@ -36,3 +36,31 @@
 		content: '\e801';
 	}
 }
+
+
+.arrows-out {
+	.slick-prev {
+		left: -48px;
+	}
+	.slick-next {
+		right: -48px;
+	}
+}
+
+/**
+* Graceful loading of slides
+ * https://github.com/kenwheeler/slick/issues/1741
+ */
+.slider {
+	.entry {
+		display: none;
+		&:first-child {
+			display: block;
+		}
+	}
+
+	&.slick-initialized .entry {
+		display: block;
+	}
+
+}

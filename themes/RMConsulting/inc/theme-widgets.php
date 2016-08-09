@@ -46,7 +46,9 @@ class Rm_Latest_News extends WP_Widget {
 
 		$markup = '<section id="latest-news" class="latest-news band">';
 		$markup.= '<div class="container">';
-		$markup.= '<div class="slider">';
+		$markup.= '<div class="container-shrink">';
+
+		$markup.= '<div class="slider arrows-out">';
 		echo $markup;
 
 		while( $latest_news->have_posts() ) : $latest_news->the_post();
@@ -56,6 +58,7 @@ class Rm_Latest_News extends WP_Widget {
 		wp_reset_postdata();
 
 		$markup = '</div><!-- slider -->';
+		$markup.= '</div><!-- container-shrink -->';
 		$markup.= '</div><!-- container -->';
 		$markup.= '</section><!-- latest-news -->';
 		echo $markup;
