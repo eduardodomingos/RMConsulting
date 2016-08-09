@@ -22,16 +22,18 @@
 <body <?php body_class(); ?>>
 
 <header class="page-head" role="banner">
-	<div class="container">
+	<div class="container clearfix">
 		<button id="js-menu-toggle" class="menu-toggle"><i class="icon-menu"><span class="sr-only">Menu</span></i></button>
 
-		<nav class="site-nav container-until-lg">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=> false, 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- site-nav -->
+		<div class="pull-lg-right">
+			<nav class="site-nav container-until-lg">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=> false, 'menu_id' => 'primary-menu' ) ); ?>
+			</nav><!-- site-nav -->
 
-		<nav class="socials">
-			<?php wp_nav_menu( array( 'theme_location' => 'social_header', 'container'=> false, 'menu_id' => 'socials-menu-header', 'link_before' => '<span class="sr-only">', 'link_after' => '</span>' ) ); ?>
-		</nav><!-- socials -->
+			<nav class="socials">
+				<?php wp_nav_menu( array( 'theme_location' => 'social_header', 'container'=> false, 'menu_id' => 'socials-menu-header', 'link_before' => '<span class="sr-only">', 'link_after' => '</span>' ) ); ?>
+			</nav><!-- socials -->
+		</div>
 
 	</div><!-- container -->
 </header><!-- page-head -->

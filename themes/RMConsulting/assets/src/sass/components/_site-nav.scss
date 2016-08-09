@@ -13,9 +13,24 @@
 	overflow: hidden;
 	z-index: 2;
 
+	@include media-breakpoint-up(lg) {
+		max-height: none;
+		position: static;
+		float: left;
+	}
+
 	ul {
 		@include list-unstyled();
 		margin-bottom: 0;
+		@include media-breakpoint-up(lg) {
+			@include clearfix();
+		}
+
+		>li {
+			@include media-breakpoint-up(lg) {
+				float: left;
+			}
+		}
 	}
 
 	a {
@@ -25,6 +40,17 @@
 		@include hover-focus-active() {
 			color: $blue1;
 		}
+
+		@include media-breakpoint-up(lg) {
+			padding: 0 20px;
+			margin: 0 20px;
+			@include hover-focus-active() {
+				color: #fff;
+				background-color: $blue1;
+				text-decoration: none;
+			}
+		}
+
 	}
 }
 
@@ -35,7 +61,13 @@
 	border: 0;
 	font-size: 25px;
 	background-color: transparent;
+	float: left;
 	@include hover-focus-active() {
 		color: $blue1;
 	}
+
+	@include media-breakpoint-up(lg) {
+		display: none;
+	}
+
 }

@@ -8922,9 +8922,9 @@ var Popover = (function ($) {
 			$window: 					$(window),
 			$body:	 					$('body'),
 			$menuToggle:				$('#js-menu-toggle'),
-			$menuToggleIcon:				$('#js-menu-toggle i'),
-			$siteNav:					$('.site-nav'),
-			$siteNavList:				$('.site-nav .menu'),
+			//$menuToggleIcon:				$('#js-menu-toggle i'),
+			//$siteNav:					$('.site-nav'),
+			//$siteNavList:				$('.site-nav .menu'),
 		};
 
 
@@ -8940,18 +8940,31 @@ var Popover = (function ($) {
 		});
 
 		// Toggle mobile menu
-		var menuHeight = dom.$siteNavList.outerHeight();
-		dom.$menuToggle.click(function(e){
-			if(dom.$siteNav.hasClass('active')) {
-				dom.$siteNav.css('max-height', 0);
-				dom.$menuToggleIcon.removeClass('icon-cancel').addClass('icon-menu');
-				dom.$siteNav.removeClass('active');
-			} else {
-				dom.$siteNav.css('max-height', menuHeight);
-				dom.$menuToggleIcon.removeClass('icon-menu').addClass('icon-cancel');
-				dom.$siteNav.addClass('active');
-			}
-		});
+		// var menuHeight = dom.$siteNavList.outerHeight();
+		// dom.$menuToggle.click(function(e){
+		// 	if(dom.$siteNav.hasClass('active')) {
+		// 		dom.$siteNav.css('max-height', 0);
+		// 		dom.$menuToggleIcon.removeClass('icon-cancel').addClass('icon-menu');
+		// 		dom.$siteNav.removeClass('active');
+		// 	} else {
+		// 		dom.$siteNav.css('max-height', menuHeight);
+		// 		dom.$menuToggleIcon.removeClass('icon-menu').addClass('icon-cancel');
+		// 		dom.$siteNav.addClass('active');
+		// 	}
+		// });
+
+
+		// On window resize:
+		// $(window).resize(function(event){
+		// 	if( window.matchMedia('(min-width: 1024px)').matches ) {
+		// 		if(dom.$siteNav.hasClass('active')) {
+		// 			dom.$menuToggleIcon.removeClass('icon-cancel').addClass('icon-menu');
+		// 			dom.$siteNav.removeClass('active');
+		// 		}
+        //
+		// 		dom.$siteNav.removeAttr('style').removeClass('active');
+		// 	}
+		// });
 
 		/*
 		 * Homepage Code

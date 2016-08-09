@@ -1,8 +1,6 @@
 /*------------------------------------*\
     $SOCIALS
 \*------------------------------------*/
-
-
 .socials {
 	ul {
 		@include list-unstyled();
@@ -52,6 +50,11 @@
 			margin-top: 11px;
 		}
 		float: right;
+
+		@include media-breakpoint-up(lg) {
+			margin-left: 40px;
+		}
+
 	}
 
 	.contacts & {
