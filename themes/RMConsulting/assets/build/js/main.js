@@ -9000,7 +9000,7 @@ var Popover = (function ($) {
 
 			dom.$window.load(function(){
 				// Latest News slider
-				$('.latest-news .slider').slick({
+				$('.latest-from-section .slider').slick({
 					mobileFirst: true
 				}).on('afterChange', function(event){
 					fixVerticalArrows(event);
@@ -9011,8 +9011,9 @@ var Popover = (function ($) {
 
 	function fixVerticalArrows(event){
 		var h =  $(event.target).find('.slick-active img').height()/2;
-		console.log($(event.target).find('.slick-active img').height());
-		$(event.target).find('.slick-arrow').css('top',h+'px');
+		if( h ) {
+			$(event.target).find('.slick-arrow').css('top',h+'px');
+		}
 	}
 
 	function googleMap() {

@@ -35,26 +35,16 @@ function rm_get_latest_posts($nb_posts = -1, $excluded_cats = array()) {
 
 
 /**
- * Returns x posts from a specific category
+ * Returns the most recent posts from a specific category
  *
  * @package Eduardo Domingos
  * @since 0.1.0
  * @author Eduardo Domingos
- * @param $nb_posts
  * @param $cat_id
  *
  * @return object
  *
  */
-//function rm_get_all_posts_from_category($nb_posts = -1, $cat_id = array() ) {
-//
-//	$args = [
-//		'post_type' => 'post',
-//		'post_status' => 'publish',
-//		'posts_per_page' => $nb_posts,
-//		'category__in' => $cat_id,
-//		'orderby' => 'date',
-//	];
-//
-//	return new WP_Query($args);
-//}
+function rm_get_all_posts_by_category_id($cat_id) {
+	return new WP_Query( array( 'cat' => $cat_id ) );
+}
