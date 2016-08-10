@@ -12,7 +12,6 @@
 <?php
 $main_image = get_field('main_image');
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
 	<header class="post__header">
 		<?php if ( 'post' === get_post_type() ) : ?>
@@ -21,7 +20,7 @@ $main_image = get_field('main_image');
 		endif; ?>
 
 		<? if( $main_image ) : ?>
-			<img src="<?php echo $main_image['sizes']['medium'] ?>" alt="<?php echo $main_image['alt']; ?>" class="post__media img-fluid">
+			<img src="<?php echo $main_image['sizes']['large'] ?>" alt="<?php echo $main_image['alt']; ?>" class="post__media img-fluid">
 		<?php endif; ?>
 
 

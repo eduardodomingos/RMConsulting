@@ -13,6 +13,8 @@ get_header(); ?>
 	<main role="main">
 
 		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-lg-10 col-lg-offset-1">
 		<?php
 		while ( have_posts() ) : the_post();
 
@@ -28,6 +30,8 @@ get_header(); ?>
 				echo rm_share_buttons( esc_html__( 'Partilhe esta notícia', 'rm' ), get_permalink(), get_the_title() );
 			}
 		?>
+				</div><!-- col -->
+			</div><!-- row -->
 		</div><!-- container -->
 
 
@@ -35,6 +39,8 @@ get_header(); ?>
 
 		<section class="latest-from-section band">
 			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-lg-10 col-lg-offset-1">
 				<div class="slider">
 					<?php
 
@@ -53,6 +59,8 @@ get_header(); ?>
 
 					?>
 				</div><!-- slider -->
+					</div><!-- col -->
+				</div><!-- row -->
 			</div><!-- container -->
 		</section><!-- latest-from-section -->
 		<?php
