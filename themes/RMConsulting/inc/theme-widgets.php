@@ -84,6 +84,8 @@ class Rm_About_Rm extends WP_Widget {
 
 		$markup = '<section id="about-rm" class="about-rm band">';
 		$markup.= '<div class="container">';
+		$markup.= '<div class="row">';
+		$markup.= '<div class="col-lg-8 col-lg-offset-2">';
 		$markup.= '<div class="tabs">';
 		echo $markup;
 
@@ -109,6 +111,8 @@ class Rm_About_Rm extends WP_Widget {
 		}
 
 		$markup = '</div><!-- tabs -->';
+		$markup.= '</div><!-- row -->';
+		$markup.= '</div><!-- col -->';
 		$markup.= '</div><!-- container -->';
 		$markup.= '</section><!-- about -->';
 		echo $markup;

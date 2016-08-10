@@ -84,7 +84,7 @@
 			// What we do slider
 			$('.why-rm .slider').slick({
 				mobileFirst: true,
-				variableWidth: true,
+				variableWidth: true
 			});
 
 			// Load more courses
