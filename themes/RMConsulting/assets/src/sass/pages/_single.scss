@@ -2,9 +2,33 @@
     $HOME
 \*------------------------------------*/
 .single {
+	.master-wrapper {
+		max-width: 663px;
+	}
+
 
 	.latest-from-section {
 		background-color: $blue4;
+
+		.slick-prev {
+			display: none!important;
+			@include media-breakpoint-up(md) {
+				display: block!important;
+			}
+		}
+
+		.slick-next {
+			right: -33px;
+			@include media-breakpoint-up(md) {
+				right: -48px;
+			}
+		}
+
+
+		.entry__title {
+			margin-bottom: 0;
+		}
+
 	}
 
 }

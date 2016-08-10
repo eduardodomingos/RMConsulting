@@ -41,6 +41,13 @@
 			display: block;
 		}
 
+		.single & {
+			display: none;
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+		}
+
 		@include hover-focus-active {
 			text-decoration: none;
 			color: #fff;

@@ -12,9 +12,9 @@ get_header(); ?>
 <div class="band band--primary">
 	<main role="main">
 
-		<div class="container">
+		<div class="container master-wrapper">
 			<div class="row">
-				<div class="col-xs-12 col-lg-10 col-lg-offset-1">
+				<div class="col-xs-10 col-xs-offset-1 col-lg-12 col-lg-offset-0">
 		<?php
 		while ( have_posts() ) : the_post();
 
@@ -38,10 +38,10 @@ get_header(); ?>
 
 
 		<section class="latest-from-section band">
-			<div class="container">
+			<div class="container master-wrapper">
 				<div class="row">
-					<div class="col-xs-12 col-lg-10 col-lg-offset-1">
-				<div class="slider">
+					<div class="col-xs-10 col-xs-offset-1 col-lg-12 col-lg-offset-0">
+				<div class="slider arrows-out">
 					<?php
 
 					if($cat_slug === 'why-us') {
