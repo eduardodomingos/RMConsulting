@@ -1,5 +1,11 @@
 (function($) {
 
+	$(window).load(function(){
+		// Fade body in
+		$('body.home').addClass('active');
+	});
+
+
 	$(document).ready(function(){
 		/*
 		 * Cache references for DOM elements
@@ -44,6 +50,20 @@
 		 * Homepage Code
 		 */
 		if(dom.$body.hasClass('home')) {
+
+			/*
+			 * Smooth scroll
+			 */
+			dom.$siteNavMenu.find('a').attr('data-scroll', true);
+			smoothScroll.init();
+			if ( window.location.hash ) {
+				var hash = smoothScroll.escapeCharacters( window.location.hash ); // Escape the hash
+				var toggle = document.querySelector( 'a[href*="' + hash + '"]' ); // Get the toggle (if one exists)
+				var options = {
+					speed: 1000,
+				}; // Any custom options you want to use would go here
+				smoothScroll.animateScroll( hash, toggle, options );
+			}
 
 			// Headlines slider
 			$('.headlines .slider-for').slick({

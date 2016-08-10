@@ -6,6 +6,7 @@ module.exports = {
 			'assets/src/js/vendors/bootstrap.js',
 			'assets/src/js/vendors/slick.js',
 			'assets/src/js/vendors/jquery.responsiveTabs.js',
+			'assets/src/js/vendors/smooth-scroll.js',
 			'assets/src/js/main.js'
 		],
 		dest: 'assets/build/js/main.js',

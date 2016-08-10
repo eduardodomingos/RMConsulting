@@ -6,7 +6,8 @@ module.exports = {
 			'bower_components/tether/dist/js/tether.js',
 			'bower_components/bootstrap/dist/js/bootstrap.js',
 			'bower_components/slick-carousel/slick/slick.js',
-			'bower_components/responsive-tabs/js/jquery.responsiveTabs.js'
+			'bower_components/responsive-tabs/js/jquery.responsiveTabs.js',
+			'bower_components/smooth-scroll/dist/js/smooth-scroll.js'
 
 		],
 		dest: 'assets/src/js/vendors/'
