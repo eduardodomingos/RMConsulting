@@ -24,24 +24,25 @@
 	</a>
 	<?php endif; ?>
 
-	<div class="entry__body">
+	<div class="entry__content">
 		<?php the_title( '<h2 class="entry__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
 		<p class="entry__text"><?php echo get_the_excerpt(); ?></p>
-		
-		<a href="<?php the_permalink(); ?>" class="read-more">
-			<?php
+		<div class="entry__footer">
+			<a href="<?php the_permalink(); ?>" class="read-more">
+				<?php
 
-			if($cat_slug === 'why-us') {
-				echo __('Ler mais', 'rm');
-			}
-			else {
-				echo __('Ver mais', 'rm');
-			}
-			?>
-		</a>
+				if($cat_slug === 'why-us') {
+					echo __('Ler mais', 'rm');
+				}
+				else {
+					echo __('Ver mais', 'rm');
+				}
+				?>
+			</a>
 
-		<hr>
-		<?php rm_posted_on(); ?>
+			<hr>
+			<?php rm_posted_on(); ?>
+		</div><!-- entry__footer -->
 	</div><!-- entry__text -->
 </article><!-- entry -->

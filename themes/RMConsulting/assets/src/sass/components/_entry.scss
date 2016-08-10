@@ -13,8 +13,9 @@
 		margin-bottom: 16px;
 	}
 
-	.entry__body {
+	.entry__content {
 		color: $blue1;
+		height: 100%;
 
 		.read-more {
 			display: block;
@@ -59,7 +60,7 @@
 
 	.entry__text {
 		line-height: 21px;
-		margin-bottom: 0;
+		//margin-bottom: 0;
 		.category-why-us & {
 			margin-bottom: 15px;
 		}

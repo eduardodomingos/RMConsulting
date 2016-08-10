@@ -4,7 +4,7 @@
 .courses-portlet {
 	background-color: $blue8;
 	color: #fff;
-	padding: 15px 10px;
+	padding: 30px 40px;
 
 	.js-load-more {
 		padding: 0;
@@ -17,7 +17,6 @@
 		font-size: 25px;
 	}
 
-
 }
 
 	.courses-portlet__head {
@@ -28,6 +27,19 @@
 		ul {
 			@include list-unstyled();
 			margin-bottom: 0;
+
+			> li {
+				transition: opacity 0.3s ease-out;
+				&.off {
+					opacity: 0;
+					height: 0;
+					overflow: hidden;
+				}
+				&.on {
+					opacity: 1;
+					height: auto;
+				}
+			}
 		}
 
 		.course-name {

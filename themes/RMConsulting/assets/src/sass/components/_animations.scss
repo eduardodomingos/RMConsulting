@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    $ANIMATIONS
+\*------------------------------------*/
+
+.floating-arrow {
+	animation-name: floating-arrow;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+@keyframes floating-arrow {
+	from {
+		transform: translate(0%, 0)
+	}
+	65% {
+		transform: translate(0%, 15px)
+	}
+	to {
+		transform: translate(0%, 0)
+	}
+}

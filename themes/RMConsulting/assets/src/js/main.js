@@ -40,19 +40,6 @@
 			}
 		});
 
-
-		// On window resize:
-		// $(window).resize(function(event){
-		// 	if( window.matchMedia('(min-width: 1024px)').matches ) {
-		// 		if(dom.$siteNav.hasClass('active')) {
-		// 			dom.$menuToggleIcon.removeClass('icon-cancel').addClass('icon-menu');
-		// 			dom.$siteNav.removeClass('active');
-		// 		}
-        //
-		// 		dom.$siteNav.removeAttr('style').removeClass('active');
-		// 	}
-		// });
-
 		/*
 		 * Homepage Code
 		 */
@@ -87,16 +74,22 @@
 				variableWidth: true
 			});
 
+			// On window resize:
+			$(window).resize(function(event){
+				$('.latest-news .slider').trigger('afterChange');
+			});
+
+
 			// Load more courses
 			$('.courses .js-load-more').click(function(e) {
 				e.preventDefault();
 				var step = $(".courses-list").data('step');
-				$(".courses-list>li:not('.hidden'):last")
-					.nextAll('.hidden:lt('+ step +')')
-					.removeClass('hidden');
+				$(".courses-list>li:not('.off'):last")
+					.nextAll('.off:lt('+ step +')')
+					.removeClass('off').addClass('on');
 
 				// If all visible hide button
-				if($('.courses-list > li.hidden').length === 0) {
+				if($('.courses-list > li.off').length === 0) {
 					$(this).hide();
 				}
 			});

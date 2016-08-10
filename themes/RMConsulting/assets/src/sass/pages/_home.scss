@@ -3,6 +3,7 @@
 \*------------------------------------*/
 .home {
 	#latest-news {
+
 		.slider-wrapper {
 			margin: 0 auto;
 		}
@@ -10,6 +11,18 @@
 		.slider-wrapper,
 		.entry {
 			width: 220px;
+		}
+
+		.entry {
+			padding-bottom: 59px;
+			position: relative;
+		}
+
+		.entry__footer {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
 		}
 
 		@include media-breakpoint-up(md) {
@@ -97,6 +110,10 @@
 				font-size: 13px;
 			}
 
+			@include media-breakpoint-up(lg) {
+				font-size: 16px;
+			}
+
 		}
 
 		.r-tabs-state-active .r-tabs-anchor {
@@ -120,7 +137,7 @@
 
 		.r-tabs .r-tabs-nav {
 			@include media-breakpoint-up(lg) {
-				padding: 0 30px;
+				padding: 0 45px;
 			}
 		}
 

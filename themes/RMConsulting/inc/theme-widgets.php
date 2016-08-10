@@ -85,7 +85,7 @@ class Rm_About_Rm extends WP_Widget {
 		$markup = '<section id="about-rm" class="about-rm band">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="row">';
-		$markup.= '<div class="col-lg-8 col-lg-offset-2">';
+		$markup.= '<div class="col-lg-12">';
 		$markup.= '<div class="tabs">';
 		echo $markup;
 
@@ -145,7 +145,7 @@ class Rm_Why_Rm extends WP_Widget {
 		echo $markup;
 
 
-		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1">';
+		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-0">';
 		$markup.= '<hgroup>';
 		$markup.= '<h2 class="section-title">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
@@ -154,7 +154,7 @@ class Rm_Why_Rm extends WP_Widget {
 		$markup.= '</div><!-- col -->';
 		echo $markup;
 
-		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1">';
+		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-0">';
 		$markup.= '<div class="slider-wrapper">';
 		$markup.= '<div class="slider arrows-out">';
 
@@ -213,11 +213,6 @@ class Rm_Why_Rm extends WP_Widget {
 		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'subtitle' ) .'" name="'. $this->get_field_name( 'subtitle' ) .'" type="text" value="'. esc_attr( $instance['subtitle'] ) .'"  />';
 		$markup.= '</p>';
 
-		/*$markup.= '<p>';
-		$markup.= '<label for="'. $this->get_field_name( 'description' ) .'">'. esc_html( 'Text:', 'rm') .'</label>';
-		$markup.= '<textarea class="widefat" rows="10" cols="20" id="'. $this->get_field_id( 'text' ) .'" name="'. $this->get_field_name( 'text' ) .'">'. esc_textarea( $instance['text'] ) .'</textarea>';
-		$markup.= '</p>';*/
-
 		echo $markup;
 	}
 }
@@ -243,9 +238,13 @@ class Rm_Courses extends WP_Widget {
 		$markup = '<section id="courses" class="courses band">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="row">';
+
 		echo $markup;
 
-		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1">';
+
+
+
+		$markup = '<div class="col-lg-6">';
 		$markup.= '<hgroup>';
 		$markup.= '<h2 class="section-title">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
@@ -255,7 +254,7 @@ class Rm_Courses extends WP_Widget {
 		echo $markup;
 
 
-		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1">';
+		$markup = '<div class="col-lg-5 pull-lg-right">';
 		$markup.= '<div class="courses-portlet">';
 		$markup.= '<div class="courses-portlet__head">';
 		$markup.= '<p class="m-b-0">// Algumas das formações tradicionais são:</p>';
@@ -282,7 +281,7 @@ class Rm_Courses extends WP_Widget {
 					$courses_counter++;
 				}
 
-				$markup = '<li '. (($courses_counter > $courses_to_show) ? 'class="hidden"' : '') .'><span class="course-name"><strong>'. get_sub_field('name'). '</strong>';
+				$markup = '<li '. (($courses_counter > $courses_to_show) ? 'class="off"' : '') .'><span class="course-name"><strong>'. get_sub_field('name'). '</strong>';
 				if(get_sub_field('description')) {
 					$markup.= ' - '. get_sub_field('description');
 				}
@@ -318,13 +317,15 @@ class Rm_Courses extends WP_Widget {
 
 			if(isset($show_load_more) && $show_load_more) {
 				$markup.='<div class="courses-portlet__foot text-xs-center">';
-				$markup.='<button class="js-load-more"><span class="sr-only">Carregar mais</span><i class="icon-down-open-big"></i></button>';
+				$markup.='<button class="js-load-more floating-arrow"><span class="sr-only">Carregar mais</span><i class="icon-down-open-big"></i></button>';
 				$markup.='</div><!-- courses-portlet__foot -->';
 			}
 			echo $markup;
 		}
 
 		$markup = '</div><!--courses-portlet -->';
+
+
 		$markup.= '</div><!-- col -->';
 		$markup.= '</div><!-- row -->';
 		$markup.= '</div><!-- container -->';
@@ -386,7 +387,7 @@ class Rm_Download extends WP_Widget {
 		$markup = '<section id="download" class="download band">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="row">';
-		$markup.= '<div class="col-sm-12 col-md-8 col-md-offset-2">';
+		$markup.= '<div class="col-sm-12 col-md-8 col-md-offset-2 col-lg-4 col-lg-offset-4">';
 
 		$markup .= do_shortcode('[easy_media_download url="'. $download_url .'" text="<span>Download</span>" color="rm"]');
 
@@ -451,7 +452,7 @@ class Rm_Text_Banner extends WP_Widget {
 		$markup = '<section class="text-banner band">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="row">';
-		$markup.= '<div class="col-sm-12 col-md-10 col-md-offset-1">';
+		$markup.= '<div class="col-xs-12">';
 		$markup.= '<hgroup>';
 		$markup.= '<h2 class="section-title m-b-0">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
@@ -524,7 +525,7 @@ class Rm_Contacts extends WP_Widget {
 		$markup = '<section id="contact" class="contact">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="row">';
-		$markup.= '<div class="col-sm-12 col-md-8 col-md-offset-1 band p-b-0 form-wrapper">';
+		$markup.= '<div class="col-xs-12 col-md-8 col-md-offset-1 col-lg-6 col-lg-offset-0 band p-b-0 form-wrapper">';
 		$markup.= '<hgroup>';
 		$markup.= '<h2 class="section-title">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
@@ -543,7 +544,7 @@ class Rm_Contacts extends WP_Widget {
 
 
 		$markup.= '<div class="row">';
-		$markup.= '<div class="col-xs-12 col-md-8 col-md-offset-1 contacts">';
+		$markup.= '<div class="col-xs-12 col-md-8 col-md-offset-1 col-lg-6 col-lg-offset-0 contacts">';
 		$markup.= '<div class="row">';
 		$markup.= '<div class="col-xs-6">';
 		$markup.= '<p class="m-b-0">'. $address .'<br>';
