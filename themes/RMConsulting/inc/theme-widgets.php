@@ -64,6 +64,7 @@ class Rm_Latest_News extends WP_Widget {
 		echo $markup;
 
 		echo $args['after_widget'];
+		echo $args['after_widget'];
 	}
 }
 
@@ -140,7 +141,7 @@ class Rm_Why_Rm extends WP_Widget {
 		echo $markup;
 
 
-		$markup = '<div class="col-sm-12">';
+		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1">';
 		$markup.= '<hgroup>';
 		$markup.= '<h2 class="section-title">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
@@ -149,7 +150,7 @@ class Rm_Why_Rm extends WP_Widget {
 		$markup.= '</div><!-- col -->';
 		echo $markup;
 
-		$markup = '<div class="col-sm-12">';
+		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1">';
 		$markup.= '<div class="slider-wrapper">';
 		$markup.= '<div class="slider arrows-out">';
 
@@ -240,7 +241,7 @@ class Rm_Courses extends WP_Widget {
 		$markup.= '<div class="row">';
 		echo $markup;
 
-		$markup = '<div class="col-sm-12">';
+		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1">';
 		$markup.= '<hgroup>';
 		$markup.= '<h2 class="section-title">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
@@ -250,7 +251,7 @@ class Rm_Courses extends WP_Widget {
 		echo $markup;
 
 
-		$markup = '<div class="col-sm-12">';
+		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1">';
 		$markup.= '<div class="courses-portlet">';
 		$markup.= '<div class="courses-portlet__head">';
 		$markup.= '<p class="m-b-0">// Algumas das formações tradicionais são:</p>';
@@ -292,7 +293,7 @@ class Rm_Courses extends WP_Widget {
 
 						$markup.= '<li class="panel panel-default">';
 						$markup.= '<div class="panel-heading" role="tab" id="heading'. $counter .'">';
-						$markup.= '<a class="collapsed course-name" data-toggle="collapse" data-parent="#accordion" href="#collapse'. $counter .'" aria-expanded="true" aria-controls="collapse'. $counter .'">'. get_sub_field('name') .'</a>';
+						$markup.= '<a class="collapsed course-name" data-toggle="collapse" data-parent="#accordion" href="#collapse'. $counter .'" aria-expanded="true" aria-controls="collapse'. $counter .'"><strong>'. get_sub_field('name') .'</strong></a>';
 						$markup.= '</div>';
 						$markup.= '<div id="collapse'. $counter .'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading'. $counter .'">';
 						$markup.= '<div>'. get_sub_field('description') .'</div>';
@@ -381,9 +382,7 @@ class Rm_Download extends WP_Widget {
 		$markup = '<section id="download" class="download band">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="row">';
-		$markup.= '<div class="col-sm-12">';
-
-
+		$markup.= '<div class="col-sm-12 col-md-8 col-md-offset-2">';
 
 		$markup .= do_shortcode('[easy_media_download url="'. $download_url .'" text="<span>Download</span>" color="rm"]');
 
@@ -448,7 +447,7 @@ class Rm_Text_Banner extends WP_Widget {
 		$markup = '<section class="text-banner band">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="row">';
-		$markup.= '<div class="col-sm-12">';
+		$markup.= '<div class="col-sm-12 col-md-10 col-md-offset-1">';
 		$markup.= '<hgroup>';
 		$markup.= '<h2 class="section-title m-b-0">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
@@ -518,20 +517,30 @@ class Rm_Contacts extends WP_Widget {
 
 		echo $args['before_widget'];
 
-		$markup = '<section id="contact" class="contact band p-b-0">';
+		$markup = '<section id="contact" class="contact">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="row">';
-		$markup.= '<div class="col-sm-12">';
+		$markup.= '<div class="col-sm-12 col-md-8 col-md-offset-1 band p-b-0 form-wrapper">';
 		$markup.= '<hgroup>';
 		$markup.= '<h2 class="section-title">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
 		$markup.= '</hgroup>';
 
 		$markup .= do_shortcode('[contact-form-7 id="108" title="Contact form 1" html_class="contact-form"]');
-
 		$markup.= '</div><!-- col -->';
+
 		$markup.= '</div><!-- row -->';
-		$markup.= '<div class="row contacts">';
+
+		$markup.= '</div><!-- container -->';
+
+
+
+		$markup.= '<div class="container">';
+
+
+		$markup.= '<div class="row">';
+		$markup.= '<div class="col-xs-12 col-md-8 col-md-offset-1 contacts">';
+		$markup.= '<div class="row">';
 		$markup.= '<div class="col-xs-6">';
 		$markup.= '<p class="m-b-0">'. $address .'<br>';
 		$markup.= 'tel. <a href="tel:+351'. str_replace(' ', '', $phone) .'">'. $phone .'</a><br>';
@@ -549,6 +558,9 @@ class Rm_Contacts extends WP_Widget {
 		$markup.= '<p class="m-b-0">Coordenadas GPS:<br>';
 		$markup.= 'Latitude: '. $latitude .'<br>';
 		$markup.= 'Longitude: '. $longitude .'</p>';
+
+		$markup.= '</div><!-- col -->';
+		$markup.= '</div><!-- row -->';
 		$markup.= '</div><!-- col -->';
 		$markup.= '</div><!-- row -->';
 		$markup.= '</div><!-- container -->';

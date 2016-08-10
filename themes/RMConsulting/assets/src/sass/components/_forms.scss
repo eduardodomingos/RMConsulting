@@ -5,11 +5,17 @@
 div.wpcf7-validation-errors {
 	@extend .alert;
 	@extend .alert-danger;
+	position: relative;
+	z-index: 1;
 }
 
 div.wpcf7-mail-sent-ok {
 	@extend .alert;
 	@extend .alert-success;
+}
+
+span.wpcf7-not-valid-tip {
+	margin: 5px 0;
 }
 
 .contact-form {

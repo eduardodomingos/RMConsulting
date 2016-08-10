@@ -44,14 +44,17 @@
 		}
 
 		.r-tabs-accordion-title {
-			height: 48px;
+			height: 40px;
 			background-color: $blue6;
 			margin-bottom: 2px;
 			padding: 0 15px;
-			font-family: $font-bold;
 			&.r-tabs-state-active {
 				background-color: transparent;
 			}
+
+			//@include media-breakpoint-up(md) {
+			//	height: 40px;
+			//}
 		}
 
 		.r-tabs .r-tabs-panel {
@@ -65,11 +68,17 @@
 			text-transform: uppercase;
 			color: #fff;
 			text-decoration: none;
-			line-height: 48px;
+			line-height: 40px;
 			display: block;
+			font-family: $font-bold;
 			@include hover-focus-active() {
 				color: #fff;
 			}
+
+			@include media-breakpoint-up(md) {
+				font-size: 13px;
+			}
+
 		}
 
 		.r-tabs-state-active .r-tabs-anchor {
@@ -78,6 +87,34 @@
 				color: $blue1;
 			}
 		}
+
+		.r-tabs .r-tabs-tab {
+			@include media-breakpoint-up(md) {
+				background-color: $blue3;
+			}
+
+			&.r-tabs-state-active {
+				@include media-breakpoint-up(md) {
+					background-color: transparent;
+				}
+			}
+		}
+
+		.r-tabs-nav {
+			margin-bottom: 25px;
+		}
+
+		.r-tabs-nav .r-tabs-tab {
+			padding: 0 8px;
+
+			& + .r-tabs-tab {
+				margin-left: 4px;
+			}
+		}
+
+
+
+
 	}
 
 	#why-rm {
@@ -107,6 +144,9 @@
 
 		.slick-prev {
 			display: none!important;
+			@include media-breakpoint-up(md) {
+				display: block!important;
+			}
 		}
 
 		.slick-next:before, .slick-prev:before {
@@ -118,6 +158,13 @@
 		.entry {
 			width: 235px;
 		}
+
+		.slider-wrapper {
+			@include media-breakpoint-up(md) {
+				margin: 0 auto;
+			}
+		}
+
 	}
 
 	#courses {
@@ -166,7 +213,13 @@
 	}
 
 	#contact {
-		background-color: $blue9;
+		overflow: hidden;
+		@include media-breakpoint-up(md) {
+			position: relative;
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+
 		&, a {
 			color: #fff;
 			@include hover-focus-active() {
@@ -174,10 +227,22 @@
 				text-decoration: none;
 			}
 		}
+
+		.form-wrapper {
+			background-color: $blue9;
+			@include media-breakpoint-up(md) {
+				background-color: rgba($blue9, 0.8);
+			}
+		}
+
 		.contacts {
+			background-color: $blue9;
 			font-size: 14px;
 			padding-top: 10px;
 			padding-bottom: 20px;
+			@include media-breakpoint-up(md) {
+				background-color: rgba($blue9, 0.8);
+			}
 		}
 	}
 }

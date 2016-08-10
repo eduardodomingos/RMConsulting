@@ -1,0 +1,42 @@
+/*------------------------------------*\
+    $TABS
+\*------------------------------------*/
+// This file is copy paste from bower_components/responsive-tabs/css/responsive-tabs.css
+// Only the media query breakpoint is edited to match the theme design.
+
+
+.r-tabs .r-tabs-nav {
+	margin: 0;
+	padding: 0;
+}
+
+.r-tabs .r-tabs-tab {
+	display: inline-block;
+	margin: 0;
+	list-style: none;
+}
+
+.r-tabs .r-tabs-panel {
+	padding: 15px;
+	display: none;
+}
+
+.r-tabs .r-tabs-accordion-title {
+	display: none;
+}
+
+.r-tabs .r-tabs-panel.r-tabs-state-active {
+	display: block;
+}
+
+/* Accordion responsive breakpoint */
+@media only screen and (max-width: 479px) {
+	.r-tabs .r-tabs-nav {
+		display: none;
+	}
+
+	.r-tabs .r-tabs-accordion-title {
+		display: block;
+	}
+}
+
