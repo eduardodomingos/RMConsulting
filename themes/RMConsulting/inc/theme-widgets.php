@@ -85,7 +85,7 @@ class Rm_About_Rm extends WP_Widget {
 		$markup = '<section id="about-rm" class="about-rm band">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="row">';
-		$markup.= '<div class="col-lg-12">';
+		$markup.= '<div class="col-lg-10 col-lg-offset-1">';
 		$markup.= '<div class="tabs">';
 		echo $markup;
 
@@ -135,17 +135,18 @@ class Rm_Why_Rm extends WP_Widget {
 
 		$title = $instance['title'];
 		$subtitle = empty( $instance['subtitle'] ) ? '' : $instance['subtitle'];
-		//$text = empty( $instance['text'] ) ? '' : $instance['text'];
 
 		echo $args['before_widget'];
 
 		$markup = '<section id="why-rm" class="why-rm band">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="row">';
+		$markup.= '<div class="col-md-10 col-md-offset-1">';
+		$markup.= '<div class="row">';
 		echo $markup;
 
 
-		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-0">';
+		$markup = '<div class="col-lg-6">';
 		$markup.= '<hgroup>';
 		$markup.= '<h2 class="section-title">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
@@ -154,7 +155,7 @@ class Rm_Why_Rm extends WP_Widget {
 		$markup.= '</div><!-- col -->';
 		echo $markup;
 
-		$markup = '<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-0">';
+		$markup = '<div class="col-lg-5 pull-lg-right">';
 		$markup.= '<div class="slider-wrapper">';
 		$markup.= '<div class="slider arrows-out">';
 
@@ -181,6 +182,8 @@ class Rm_Why_Rm extends WP_Widget {
 		echo $markup;
 
 		$markup = '</div><!-- row -->';
+		$markup.= '</div><!-- col -->';
+		$markup.= '</div><!-- row -->';
 		$markup.= '</div><!-- container -->';
 		$markup.= '</section><!-- about -->';
 		echo $markup;
