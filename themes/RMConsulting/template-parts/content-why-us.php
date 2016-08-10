@@ -13,7 +13,13 @@
 	<header class="post__header">
 		<p class="post__category"><?php echo get_the_title(); ?></p>
 	</header><!-- .entry-header -->
+	<?php
 
+	if(has_post_thumbnail()) {
+		the_post_thumbnail('post-thumbnail',array( 'class' => 'post__media img-fluid' ) );
+	}
+
+	?>
 	<div class="post__content">
 		<?php
 			the_content( sprintf(
