@@ -59,7 +59,15 @@
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				arrows: false,
-				asNavFor: '.headlines .slider-for'
+				asNavFor: '.headlines .slider-for',
+				responsive: [
+					{
+						breakpoint: 1023,
+						settings: {
+							arrows: true
+						}
+					}
+				]
 			});
 
 			$('#about-rm .tabs').responsiveTabs({

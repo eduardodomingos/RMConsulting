@@ -16,7 +16,7 @@
 				<span class="sr-only"><?php bloginfo( 'name' ); ?>/span>
 			</a>
 		</h1>
-		<div class="slider-nav">
+		<div class="slider slider-nav">
 			<?php
 			if( have_rows('headlines') ):
 				while ( have_rows('headlines') ) : the_row();
@@ -24,7 +24,7 @@
 					$image_tablet = get_sub_field('image_tablet');
 					$image_desktop = get_sub_field('image_desktop');
 					?>
-					<div>
+					<div class="slider-item">
 						<picture>
 							<source media="(min-width: 1024px)"
 									srcset="<?php echo $image_desktop['url']; ?> 2000w"
@@ -43,11 +43,11 @@
 		</div><!-- slider-nav -->
 	</div><!-- headlines__media -->
 
-	<div class="slider-for">
+	<div class="slider slider-for">
 		<?php
 		if( have_rows('headlines') ):
 			while ( have_rows('headlines') ) : the_row(); ?>
-				<div>
+				<div class="slider-item">
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">

@@ -44,7 +44,7 @@
 
 		@include media-breakpoint-up(lg) {
 			padding: 0 20px;
-			margin: 0 20px;
+			margin: 0 10px;
 			@include hover-focus-active() {
 				color: #fff;
 				background-color: $blue1;
@@ -83,5 +83,13 @@
 	@include media-breakpoint-up(lg) {
 		display: none;
 	}
+}
 
+
+
+@each $page in home, news, what-we-do  {
+	.page--#{$page} .site-nav__item--#{$page} a {
+		color: #fff;
+		background-color: $blue1;
+	}
 }

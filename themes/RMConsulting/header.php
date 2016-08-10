@@ -8,8 +8,30 @@
  *
  * @package RM_Consulting
  */
+?>
+<?php
 
-?><!DOCTYPE html>
+$body_class = '';
+if( is_home() || is_front_page() ){
+	$body_class = 'page--home';
+}
+elseif(is_singular('post')) {
+	$category = get_the_category( get_the_ID() );
+	$cat_id = $category[0]->cat_ID;
+	$cat_slug = $category[0]->slug;
+
+	if($cat_slug === 'why-us') {
+		$body_class = 'page--what-we-do';
+	}
+	else {
+		$body_class = 'page--news';
+	}
+}
+
+?>
+
+
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -19,7 +41,7 @@
 
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class($body_class); ?>>
 
 <header class="page-head" role="banner">
 	<div class="container clearfix">
