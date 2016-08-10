@@ -156,12 +156,18 @@
 
 		var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+		//map.panBy(-300, 0);
+
 		var mapMarker = new google.maps.Marker({
 			position: mapOptions.center,
 			map: map,
 			icon: '/wp-content/themes/RMConsulting/assets/build/img/rm-map-marker.png'
 		});
 
+		google.maps.event.addDomListener(window, 'resize', function() {
+			map.setCenter(mapOptions.center);
+			//map.panBy(-300, 0);
+		});
 	}
 
 
