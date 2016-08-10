@@ -126,11 +126,26 @@
 			dom.$window.load(function(){
 				// Latest News slider
 				$('.latest-from-section .slider').slick({
-					mobileFirst: true
+					mobileFirst: true,
+					responsive: [
+						{
+							breakpoint: 479,
+							settings: {
+								slidesToShow: 2,
+								slidesToScroll: 1
+							}
+						}
+					]
 				}).on('afterChange', function(event){
 					fixVerticalArrows(event);
 				}).trigger('afterChange');
 			});
+
+			// On window resize:
+			$(window).resize(function(event){
+				$('.latest-from-section .slider').trigger('afterChange');
+			});
+
 		}
 	});
 
