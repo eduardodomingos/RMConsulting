@@ -8985,7 +8985,16 @@ var Popover = (function ($) {
 			// What we do slider
 			$('.why-rm .slider').slick({
 				mobileFirst: true,
-				variableWidth: true
+				variableWidth: true,
+				responsive: [
+					{
+						breakpoint: 740,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 1
+						}
+					}
+				]
 			});
 
 			// On window resize:

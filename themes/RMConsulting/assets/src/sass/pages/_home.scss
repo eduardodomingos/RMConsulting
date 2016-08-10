@@ -190,8 +190,11 @@
 
 		.slick-prev {
 			display: none!important;
-			@include media-breakpoint-up(md) {
+			@media screen and (min-width: 739px) {
 				display: block!important;
+			}
+			@include media-breakpoint-up(lg) {
+				display: none!important;
 			}
 		}
 
@@ -210,6 +213,27 @@
 				margin: 0 auto;
 			}
 		}
+
+		@media screen and (min-width: 739px) {
+			.slick-list {
+				margin: 0 15px;
+			}
+
+			.slider-wrapper {
+				width: 530px;
+
+			}
+
+			.slick-prev {
+				right: -48px;
+				//display: block!important;
+			}
+
+			.slick-next {
+				right: -48px;
+			}
+		}
+
 
 	}
 

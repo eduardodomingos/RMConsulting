@@ -146,7 +146,7 @@ class Rm_Why_Rm extends WP_Widget {
 		echo $markup;
 
 
-		$markup = '<div class="col-lg-6">';
+		$markup = '<div class="col-xs-12 col-lg-5">';
 		$markup.= '<hgroup>';
 		$markup.= '<h2 class="section-title">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
@@ -155,7 +155,7 @@ class Rm_Why_Rm extends WP_Widget {
 		$markup.= '</div><!-- col -->';
 		echo $markup;
 
-		$markup = '<div class="col-lg-5 pull-lg-right">';
+		$markup = '<div class="col-xs-12 col-lg-7">';
 		$markup.= '<div class="slider-wrapper">';
 		$markup.= '<div class="slider arrows-out">';
 
@@ -248,7 +248,7 @@ class Rm_Courses extends WP_Widget {
 
 
 
-		$markup = '<div class="col-lg-6">';
+		$markup = '<div class="col-lg-5">';
 		$markup.= '<hgroup>';
 		$markup.= '<h2 class="section-title">'. $title .'</h2>';
 		$markup.= '<h3 class="section-subtitle">'. $subtitle .'</h3>';
@@ -258,7 +258,7 @@ class Rm_Courses extends WP_Widget {
 		echo $markup;
 
 
-		$markup = '<div class="col-lg-5 pull-lg-right">';
+		$markup = '<div class="col-lg-7">';
 		$markup.= '<div class="courses-portlet">';
 		$markup.= '<div class="courses-portlet__head">';
 		$markup.= '<p class="m-b-0">// Algumas das formações tradicionais são:</p>';

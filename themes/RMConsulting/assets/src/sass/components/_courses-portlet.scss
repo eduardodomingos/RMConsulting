@@ -5,6 +5,9 @@
 	background-color: $blue8;
 	color: #fff;
 	padding: 30px 40px;
+	@include media-breakpoint-up(lg) {
+		margin: 0 15px;
+	}
 
 	.js-load-more {
 		padding: 0;
