@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    $404
+\*------------------------------------*/
+
+.error404 {
+	.page-foot {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.logo {
+		background-color: $blue9;
+		padding: 30px 0;
+		a {
+			display: block;
+			width: 100px;
+			margin: 0 auto;
+		}
+	}
+
+	.js-to-top {
+		display: none;
+	}
+
+}
+

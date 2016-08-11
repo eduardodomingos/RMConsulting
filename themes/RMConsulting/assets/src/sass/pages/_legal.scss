@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    $LEGAL
+\*------------------------------------*/
+
+body.page--legal {
+
+	/* Margin bottom by footer height */
+	margin-bottom: 74px;
+
+
+	.page-foot {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		/* Set the fixed height of the footer here */
+		height: 74px;
+	}
+
+}
+

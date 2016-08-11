@@ -10,11 +10,15 @@
 ?>
 
 <?php
+$category = get_the_category( get_the_ID() ); // this gets the category array of objects
+$cat_id = $category[0]->cat_ID;
+$cat_slug = $category[0]->slug;
+
 $main_image = get_field('main_image');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
 	<header class="post__header">
-		<?php if ( 'post' === get_post_type() ) : ?>
+		<?php if ( 'post' === get_post_type() && $cat_slug !== 'legal' ) : ?>
 		<p class="post__category"><?php echo esc_html__( 'Notícias', 'rm' ); ?></p>
 		<?php
 		endif; ?>

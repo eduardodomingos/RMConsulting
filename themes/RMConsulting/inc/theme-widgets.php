@@ -40,7 +40,7 @@ class Rm_Latest_News extends WP_Widget {
 			$args['widget_id'] = $this->id;
 		}
 
-		$latest_news = rm_get_latest_posts(get_field( 'latest_news_to_show', 'option' ), array('Why us')); // exclude posts under the why us category
+		$latest_news = rm_get_latest_posts(get_field( 'latest_news_to_show', 'option' ), array('Why us', 'Legal')); // exclude posts under the why us category
 
 		echo $args['before_widget'];
 

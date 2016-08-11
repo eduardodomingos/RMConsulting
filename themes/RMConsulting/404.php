@@ -9,56 +9,29 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'rm' ); ?></h1>
-				</header><!-- .page-header -->
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'rm' ); ?></p>
+	<h1 class="logo">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<img src="<?php bloginfo('template_directory');?>/assets/build/img/rm_logo.svg" alt="<?php bloginfo( 'name' ); ?>">
+				<span class="sr-only"><?php bloginfo( 'name' ); ?>/span>
+		</a>
+	</h1>
 
-					<?php
-						get_search_form();
+	<!-- PRIMARY SECTION
+        ========================================================= -->
+	<div class="band">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-xs-center lead">
+					<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'dw' ); ?></p>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Go back home', 'dw' ); ?></a>
+				</div><!-- col -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- band--primary -->
 
-						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( rm_categorized_blog() ) :
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'rm' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'rm' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
 <?php
+
 get_footer();

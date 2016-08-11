@@ -23,6 +23,9 @@ elseif(is_singular('post')) {
 	if($cat_slug === 'why-us') {
 		$body_class = 'page--what-we-do';
 	}
+	elseif($cat_slug === 'legal') {
+		$body_class = 'page--legal';
+	}
 	else {
 		$body_class = 'page--news';
 	}

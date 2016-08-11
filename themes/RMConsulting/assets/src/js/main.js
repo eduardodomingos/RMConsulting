@@ -160,6 +160,41 @@
 		 */
 		if(dom.$body.hasClass('single')) {
 
+			/*
+			 * Article share buttons
+			 */
+			//if( dom.$body.hasClass('single-post') || dom.$body.hasClass('single-service') ) {
+				var $share = $('.share-this'); // cache share
+				if ( $share.length ) {
+
+					// Facebook
+					$share.find('.link-share-facebook').on('click', function(e){
+						e.preventDefault();
+						window.open( $(this).attr('href'), 'sharer', 'toolbar=0,status=0,width=548,height=325');
+					});
+
+					// Twitter Share
+					$share.find('.link-share-twitter').on('click', function(e){
+						e.preventDefault();
+						window.open( $(this).attr('href'), 'twitter', 'toolbar=0,status=0,width=548,height=325');
+					});
+
+					// Share Google Plus
+					$share.find('.link-share-gplus').on('click', function(e){
+						e.preventDefault();
+						window.open( $(this).attr('href'), 'gplus', 'toolbar=0,status=0,width=548,height=325');
+					});
+
+					// Share LinkedIn
+					$share.find('.link-share-in').on('click', function(e){
+						e.preventDefault();
+						window.open( $(this).attr('href'), 'LinkedIn','toolbar=0,status=0,width=520,height=570');
+					});
+
+				}
+			//}
+
+
 			dom.$window.load(function(){
 				// Latest News slider
 				$('.latest-from-section .slider').slick({
