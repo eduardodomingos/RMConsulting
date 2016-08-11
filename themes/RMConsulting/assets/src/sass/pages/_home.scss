@@ -68,16 +68,16 @@
 
 
 	#about-rm {
-		background-color: $blue4;
+		background-color: $blue20;
 
 		.tabs {
-			background-color: $blue5;
-			color: $blue1;
+			background-color: $blue20;
+			color: $blue;
 		}
 
 		.r-tabs-accordion-title {
 			height: 40px;
-			background-color: $blue6;
+			background-color: $blue70;
 			margin-bottom: 2px;
 			padding: 0 15px;
 			&.r-tabs-state-active {
@@ -118,15 +118,15 @@
 		}
 
 		.r-tabs-state-active .r-tabs-anchor {
-			color: $blue1;
+			color: $blue;
 			@include hover-focus-active() {
-				color: $blue1;
+				color: $blue;
 			}
 		}
 
 		.r-tabs .r-tabs-tab {
 			@include media-breakpoint-up(md) {
-				background-color: $blue3;
+				background-color: $blue70;
 			}
 
 			&.r-tabs-state-active {
@@ -238,8 +238,8 @@
 	}
 
 	#courses {
-		background-color: $blue7;
-		color: $blue1;
+		background-color: $blue50;
+		color: $blue;
 
 		.section-title,
 		.section-subtitle{
@@ -249,11 +249,11 @@
 
 	#download {
 		text-align: center;
-		background-color: $blue9;
+		background-color: $blue70;
 		color: #fff;
 
 		.emd_dl_rm {
-			background: $blue1;
+			background: $blue;
 			border: 0;
 			box-shadow: none;
 			text-shadow: none;
@@ -266,7 +266,7 @@
 			@include border-radius(50%);
 			@include hover-focus-active() {
 				text-decoration: none;
-				background: darken($blue1, 10%);
+				background: darken($blue, 10%);
 			}
 
 			&:before {
@@ -299,19 +299,19 @@
 		}
 
 		.form-wrapper {
-			background-color: $blue9;
+			background-color: $blue80;
 			@include media-breakpoint-up(md) {
-				background-color: rgba($blue9, 0.8);
+				background-color: $blue80;//rgba($blue9, 0.8);
 			}
 		}
 
 		.contacts {
-			background-color: $blue9;
+			background-color: $blue80;
 			font-size: 14px;
 			padding-top: 10px;
 			padding-bottom: 20px;
 			@include media-breakpoint-up(md) {
-				background-color: rgba($blue9, 0.8);
+				background-color: $blue80;//rgba($blue9, 0.8);
 			}
 		}
 	}

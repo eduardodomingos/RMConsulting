@@ -14,7 +14,7 @@
 	}
 
 	.entry__content {
-		color: $blue1;
+		color: $blue;
 		height: 100%;
 
 		.read-more {
@@ -23,7 +23,7 @@
 			//font-size: 14px;
 			font-family: $font-bold;
 			@include hover-focus-active() {
-				color: darken($blue1, 10%);
+				color: darken($blue, 10%);
 			}
 			&:before {
 				content: '\002F \002F';
@@ -33,7 +33,7 @@
 		}
 
 		hr {
-			border-top: 1px solid $blue1;
+			border-top: 1px solid $blue;
 			margin-top: 8px;
 			margin-bottom: 2px;
 		}
@@ -75,12 +75,12 @@
 			text-transform: uppercase;
 			&,
 			a {
-				color: $blue1;
+				color: $blue;
 				font-size: 18px;
 				line-height: 22px;
 				letter-spacing: 1px;
 				@include hover-focus-active() {
-					color: darken($blue1, 10%);
+					color: darken($blue, 10%);
 				}
 			}
 		}

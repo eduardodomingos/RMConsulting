@@ -12,9 +12,9 @@
 		@include square(25px);
 
 		@include border-radius(50%);
-		background-color: $blue1;
+		background-color: $blue;
 		@include hover-focus-active() {
-			background-color:darken( $blue1, 10%);
+			background-color:darken( $blue, 10%);
 		}
 
 		+ li {
@@ -27,7 +27,7 @@
 		&.facebook a:before {
 			content: '\f09a';
 		}
-		&.twitter a:before {
+		&.linkedin a:before {
 			content: '\f0e1';
 		}
 
@@ -66,9 +66,9 @@
 				background-color:darken( #fff, 10%);
 			}
 			a {
-				color: $blue1!important;
+				color: $blue!important;
 				@include hover-focus-active() {
-					color: $blue9!important;
+					color: $blue70!important;
 				}
 			}
 		}

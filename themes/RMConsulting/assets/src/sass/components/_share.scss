@@ -2,7 +2,7 @@
     $SHARE
 \*------------------------------------*/
 .share-this {
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 .share-this__label {
@@ -18,7 +18,7 @@
 	display: inline-block;
 	@include border-radius(50%);
 	color: #fff;
-	background-color: $blue6;
+	background-color: $blue70;
 
 	span {
 		display: block;
@@ -32,7 +32,7 @@
 	@include hover-focus-active(){
 		color: #fff;
 		text-decoration: none;
-		background-color: $blue1;
+		background-color: $blue;
 	}
 
 	&+.share-this__link {

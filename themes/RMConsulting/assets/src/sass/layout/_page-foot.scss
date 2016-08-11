@@ -3,7 +3,7 @@
 \*------------------------------------*/
 .page-foot {
 	text-align: center;
-	background-color: $blue1;
+	background-color: $blue;
 	font-size: 13px;
 	padding: 10px 0;
 	z-index: 1;
@@ -32,7 +32,7 @@
 		@include square(48px);
 		line-height: 48px;
 		text-align: center;
-		background: $blue9;
+		background: $blue70;
 		font-size: 20px;
 		color: #fff;
 		display: none;
@@ -51,7 +51,7 @@
 		@include hover-focus-active {
 			text-decoration: none;
 			color: #fff;
-			background-color: darken($blue9, 10%);
+			background-color: darken($blue70, 10%);
 		}
 
 		@include media-breakpoint-up(md) {

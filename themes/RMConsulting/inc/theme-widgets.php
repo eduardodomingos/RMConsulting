@@ -138,7 +138,7 @@ class Rm_Why_Rm extends WP_Widget {
 
 		echo $args['before_widget'];
 
-		$markup = '<section id="why-rm" class="why-rm band">';
+		$markup = '<section id="why-rm" class="why-rm band-xl">';
 		$markup.= '<div class="container">';
 		$markup.= '<div class="row">';
 		$markup.= '<div class="col-md-10 col-md-offset-1">';

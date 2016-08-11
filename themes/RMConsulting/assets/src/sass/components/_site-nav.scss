@@ -6,7 +6,7 @@
 	top: 48px;
 	left: 0;
 	right: 0;
-	background-color: $blue4;
+	background-color: $blue70;
 	z-index: 1;
 	max-height: 0;
 	transition: max-height 0.2s;
@@ -37,9 +37,9 @@
 	a {
 		display: block;
 		line-height: 48px;
-		color: $blue1;
+		color: $blue;
 		@include hover-focus-active() {
-			color: $blue1;
+			color: $blue;
 		}
 
 		@include media-breakpoint-up(lg) {
@@ -47,7 +47,7 @@
 			margin: 0 10px;
 			@include hover-focus-active() {
 				color: #fff;
-				background-color: $blue1;
+				background-color: $blue;
 				text-decoration: none;
 			}
 		}
@@ -77,7 +77,7 @@
 	}
 
 	@include hover-focus-active() {
-		color: $blue1;
+		color: $blue;
 	}
 
 	@include media-breakpoint-up(lg) {
@@ -90,6 +90,6 @@
 @each $page in home, news, what-we-do  {
 	.page--#{$page} .site-nav__item--#{$page} a {
 		color: #fff;
-		background-color: $blue1;
+		background-color: $blue;
 	}
 }

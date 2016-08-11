@@ -15,7 +15,7 @@
 	font-size: 18px;
 	padding-bottom: 10px;
 	margin-bottom: 20px;
-	border-bottom: 1px solid $blue1;
+	border-bottom: 1px solid $blue;
 	letter-spacing: 0.5px;
 }
 
@@ -24,7 +24,7 @@
 .post__meta {
 	padding-bottom: 20px;
 	margin-bottom: 10px;
-	border-bottom: 1px solid $blue1;
+	border-bottom: 1px solid $blue;
 }
 
 .post__media {
@@ -33,7 +33,7 @@
 
 .post__title {
 	font-size: 20px;
-	color: $blue1;
+	color: $blue;
 	text-transform: uppercase;
 	letter-spacing: -0.5px;
 }
@@ -42,7 +42,7 @@
 	*>:last-child {
 		margin-bottom: 0;
 	}
-	margin-bottom: 20px;
+	margin-bottom: 60px;
 }
 
 .post__footer {

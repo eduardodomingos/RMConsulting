@@ -2,7 +2,7 @@
     $COURSES PORTLET
 \*------------------------------------*/
 .courses-portlet {
-	background-color: $blue8;
+	background-color: $blue70;
 	color: #fff;
 	padding: 30px 40px;
 	@include media-breakpoint-up(lg) {
@@ -48,7 +48,7 @@
 		.course-name {
 			display: block;
 			padding: 12px 0;
-			border-bottom: 1px solid $blue1;
+			border-bottom: 1px solid $blue;
 			color: #fff;
 			@include hover-focus-active() {
 				color: #fff;
@@ -82,7 +82,7 @@
 
 		.panel-collapse > div {
 			padding: 12px 0;
-			border-bottom: 1px solid $blue1;
+			border-bottom: 1px solid $blue;
 			>*:last-child {
 				margin-bottom: 0;
 			}

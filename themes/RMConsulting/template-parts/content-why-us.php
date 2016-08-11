@@ -14,14 +14,13 @@
 		<p class="post__category"><?php echo get_the_title(); ?></p>
 	</header><!-- .entry-header -->
 	<div class="row">
-		<div class="col-lg-4">
-			<?php
-			if(has_post_thumbnail()) {
-				the_post_thumbnail('post-thumbnail',array( 'class' => 'post__media img-fluid' ) );
-			}
-			?>
-		</div><!-- col -->
-		<div class="col-lg-7 pull-lg-right">
+		<?php if(has_post_thumbnail()): ?>
+			<div class="col-lg-4">
+				<?php the_post_thumbnail('post-thumbnail',array( 'class' => 'post__media img-fluid' ) ); ?>
+			</div><!-- col -->
+		<?php endif; ?>
+
+		<div class="<?php echo (has_post_thumbnail()) ? 'col-lg-7 pull-lg-right' : 'col-xs-12' ?>">
 			<div class="post__content">
 				<?php
 				the_content( sprintf(

@@ -33,7 +33,7 @@ get_header(); ?>
 			else {
 				get_template_part( 'template-parts/content', get_post_format() );
 				if($cat_slug !== 'legal') {
-						echo rm_share_buttons( esc_html__( 'Partilhe esta notícia', 'rm' ), get_permalink(), get_the_title() );
+					echo rm_share_buttons( esc_html__( 'Partilhe esta notícia', 'rm' ), get_permalink(), get_the_title() );
 				}
 			}
 		?>
