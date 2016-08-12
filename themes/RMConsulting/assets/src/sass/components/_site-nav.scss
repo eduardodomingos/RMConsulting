@@ -6,7 +6,7 @@
 	top: 48px;
 	left: 0;
 	right: 0;
-	background-color: $blue70;
+	background-color: #eaeaea;
 	z-index: 1;
 	max-height: 0;
 	transition: max-height 0.2s;
@@ -89,7 +89,11 @@
 
 @each $page in home, news, what-we-do  {
 	.page--#{$page} .site-nav__item--#{$page} a {
-		color: #fff;
-		background-color: $blue;
+		font-family: $font-bold;
+		@include media-breakpoint-up(lg) {
+			font-family: $font-regular;
+			color: #fff;
+			background-color: $blue;
+		}
 	}
 }
