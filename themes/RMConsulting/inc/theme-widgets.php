@@ -235,6 +235,7 @@ class Rm_Courses extends WP_Widget {
 		$title = $instance['title'];
 		$subtitle = empty( $instance['subtitle'] ) ? '' : $instance['subtitle'];
 		$text = empty( $instance['text'] ) ? '' : $instance['text'];
+		$courses_title = empty( $instance['courses_title'] ) ? '' : $instance['courses_title'];
 
 		echo $args['before_widget'];
 
@@ -261,7 +262,7 @@ class Rm_Courses extends WP_Widget {
 		$markup = '<div class="col-lg-7">';
 		$markup.= '<div class="courses-portlet">';
 		$markup.= '<div class="courses-portlet__head">';
-		$markup.= '<p class="m-b-0">// Algumas das formações tradicionais são:</p>';
+		$markup.= '<p class="m-b-0">// '. $courses_title .'</p>';
 		$markup.= '</div><!-- courses-portlet__head -->';
 		echo $markup;
 
@@ -346,7 +347,8 @@ class Rm_Courses extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = !empty( $new_instance['title'] ) ? $new_instance['title'] : '';
 		$instance['subtitle'] = !empty( $new_instance['subtitle'] ) ? $new_instance['subtitle'] : '';
-		$instance['text'] =  $new_instance['text'];
+		$instance['text'] = !empty( $new_instance['text'] ) ? $new_instance['text'] : '';
+		$instance['courses_title'] = !empty( $new_instance['courses_title'] ) ? $new_instance['courses_title'] : '';
 
 		return $instance;
 	}
@@ -367,6 +369,11 @@ class Rm_Courses extends WP_Widget {
 		$markup.= '<p>';
 		$markup.= '<label for="'. $this->get_field_name( 'description' ) .'">'. esc_html( 'Text:', 'rm') .'</label>';
 		$markup.= '<textarea class="widefat" rows="10" cols="20" id="'. $this->get_field_id( 'text' ) .'" name="'. $this->get_field_name( 'text' ) .'">'. esc_textarea( $instance['text'] ) .'</textarea>';
+		$markup.= '</p>';
+
+		$markup.= '<p>';
+		$markup.= '<label for="'. $this->get_field_name( 'courses_title' ) .'">'. esc_html( 'Courses title:', 'rm') .'</label>';
+		$markup.= '<input class="widefat" id="'. $this->get_field_id( 'courses_title' ) .'" name="'. $this->get_field_name( 'courses_title' ) .'" type="text" value="'. esc_attr( $instance['courses_title'] ) .'"  />';
 		$markup.= '</p>';
 
 		echo $markup;

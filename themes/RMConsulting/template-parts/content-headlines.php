@@ -23,6 +23,7 @@
 					$image_phone = get_sub_field('image_phone');
 					$image_tablet = get_sub_field('image_tablet');
 					$image_desktop = get_sub_field('image_desktop');
+					$image_opacity = get_sub_field('image_opacity');
 					?>
 					<div class="slider-item">
 						<picture>
@@ -34,7 +35,7 @@
 									sizes="100vw" />
 							<source srcset="<?php echo $image_phone['url']; ?> 480w"
 									sizes="100vw" />
-							<img src="<?php echo $image_phone['url']; ?>" alt="<?php echo $image_desktop['alt']; ?>" class="img-fluid">
+							<img src="<?php echo $image_phone['url']; ?>" alt="<?php echo $image_desktop['alt']; ?>" class="img-fluid" style="opacity: <?php echo $image_opacity; ?>;">
 						</picture>
 					</div>
 			<?php
